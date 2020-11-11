@@ -1,0 +1,29 @@
+// stripping styles
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+// images?
+
+.wrapper {
+    width: 85%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+// COLOUR VARIABLES
+$recordingStudioBackground: teal;
+$recordingStudioFloor: grey;
+
+    // SECTION colours specific to the instruments
+    // keyboard
+        // sheet music, baseboard
+$white: white;
+        // music stand, keyboard, keyboard stand
+$black: black;

@@ -1,0 +1,16 @@
+// import setup snippet
+@import 'setup';
+@import 'global';
+
+
+
+
+// import CSS instruments
+@import 'instruments';
+// TODO make sure the images don't break once loaded
+
+// NEED FOR DISPLAYING INSTRUMENTS: .hideInstrument .showInstrument
+.hideInstrument {
+    // TEST
+    visibility: hidden;
+}

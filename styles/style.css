@@ -1,0 +1,412 @@
+html {
+  line-height: 1.15;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+}
+
+article, aside, footer, header, nav, section {
+  display: block;
+}
+
+h1 {
+  font-size: 2em;
+  margin: .67em 0;
+}
+
+figcaption, figure, main {
+  display: block;
+}
+
+figure {
+  margin: 1em 40px;
+}
+
+hr {
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  height: 0;
+  overflow: visible;
+}
+
+pre {
+  font-family: monospace,monospace;
+  font-size: 1em;
+}
+
+a {
+  background-color: transparent;
+  -webkit-text-decoration-skip: objects;
+}
+
+abbr[title] {
+  border-bottom: none;
+  text-decoration: underline;
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted;
+}
+
+b, strong {
+  font-weight: inherit;
+}
+
+b, strong {
+  font-weight: bolder;
+}
+
+code, kbd, samp {
+  font-family: monospace,monospace;
+  font-size: 1em;
+}
+
+dfn {
+  font-style: italic;
+}
+
+mark {
+  background-color: #ff0;
+  color: #000;
+}
+
+small {
+  font-size: 80%;
+}
+
+sub, sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -.25em;
+}
+
+sup {
+  top: -.5em;
+}
+
+audio, video {
+  display: inline-block;
+}
+
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+img {
+  border-style: none;
+}
+
+svg:not(:root) {
+  overflow: hidden;
+}
+
+button, input, optgroup, select, textarea {
+  font-family: sans-serif;
+  font-size: 100%;
+  line-height: 1.15;
+  margin: 0;
+}
+
+button, input {
+  overflow: visible;
+}
+
+button, select {
+  text-transform: none;
+}
+
+button, html [type=button], [type=reset], [type=submit] {
+  -webkit-appearance: button;
+}
+
+button::-moz-focus-inner, [type=button]::-moz-focus-inner, [type=reset]::-moz-focus-inner, [type=submit]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+button:-moz-focusring, [type=button]:-moz-focusring, [type=reset]:-moz-focusring, [type=submit]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+fieldset {
+  padding: .35em .75em .625em;
+}
+
+legend {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  color: inherit;
+  display: table;
+  max-width: 100%;
+  padding: 0;
+  white-space: normal;
+}
+
+progress {
+  display: inline-block;
+  vertical-align: baseline;
+}
+
+textarea {
+  overflow: auto;
+}
+
+[type=checkbox], [type=radio] {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0;
+}
+
+[type=number]::-webkit-inner-spin-button, [type=number]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+[type=search] {
+  -webkit-appearance: textfield;
+  outline-offset: -2px;
+}
+
+[type=search]::-webkit-search-cancel-button, [type=search]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  font: inherit;
+}
+
+details, menu {
+  display: block;
+}
+
+summary {
+  display: list-item;
+}
+
+canvas {
+  display: inline-block;
+}
+
+template {
+  display: none;
+}
+
+[hidden] {
+  display: none;
+}
+
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: '';
+  clear: both;
+  height: 0;
+}
+
+html {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  -webkit-clip-path: inset(100%);
+          clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+.wrapper {
+  width: 85%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.keyboard {
+  background: teal;
+  width: 300px;
+  height: 400px;
+}
+
+.top {
+  width: 100%;
+  height: 55%;
+  position: relative;
+}
+
+.top .musicStand {
+  width: 60px;
+  height: 30px;
+  background: white;
+  position: absolute;
+  bottom: 30px;
+  left: 120px;
+}
+
+.top .musicStand .horizontalBar {
+  background: black;
+  width: 100%;
+  height: 5px;
+  position: absolute;
+}
+
+.top .musicStand .bar1 {
+  border-radius: 10px 10px 0 0;
+}
+
+.top .musicStand .bar2 {
+  top: calc(50% - 2.5px);
+}
+
+.top .musicStand .bar3 {
+  bottom: 0;
+}
+
+.top .musicStand .verticalBar {
+  background: black;
+  width: 50%;
+  height: 5px;
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+  position: absolute;
+}
+
+.top .musicStand .bar4, .top .musicStand .bar5, .top .musicStand .bar6, .top .musicStand .bar7, .top .musicStand .bar8 {
+  top: 50%;
+}
+
+.top .musicStand .bar4 {
+  left: -12.5px;
+}
+
+.top .musicStand .bar5 {
+  left: 1px;
+}
+
+.top .musicStand .bar6 {
+  left: 25%;
+}
+
+.top .musicStand .bar7 {
+  right: 1px;
+}
+
+.top .musicStand .bar8 {
+  right: -12.5px;
+}
+
+.top .keys {
+  background: black;
+  width: 160px;
+  height: 30px;
+  position: absolute;
+  bottom: 0;
+  left: 70px;
+}
+
+.top .keys::before, .top .keys::after {
+  content: "";
+  width: 0;
+  height: 30px;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  position: absolute;
+}
+
+.top .keys::before {
+  border-right: 10px solid black;
+  left: -10px;
+}
+
+.top .keys::after {
+  border-left: 10px solid black;
+  right: -10px;
+}
+
+.stand {
+  position: relative;
+  width: 100%;
+  height: calc(30% - 10px);
+  border-bottom: 10px solid white;
+}
+
+.stand .legs {
+  background: black;
+  width: 200px;
+  height: 10px;
+  position: absolute;
+  top: 60%;
+  left: 50px;
+}
+
+.stand .leg1 {
+  -webkit-transform: rotate(135deg);
+          transform: rotate(135deg);
+}
+
+.stand .leg2 {
+  -webkit-transform: rotate(-135deg);
+          transform: rotate(-135deg);
+}
+
+.stand .feet {
+  background: black;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  position: absolute;
+}
+
+.stand .foot1, .stand .foot2 {
+  top: -5px;
+}
+
+.stand .foot1, .stand .foot3 {
+  left: 75px;
+}
+
+.stand .foot2, .stand .foot4 {
+  right: 75px;
+}
+
+.stand .foot3, .stand .foot4 {
+  bottom: -35px;
+}
+
+.floor {
+  width: 100%;
+  height: 15%;
+  background: grey;
+}
+
+.hideInstrument {
+  visibility: hidden;
+}
