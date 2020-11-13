@@ -250,6 +250,45 @@ html {
   margin: 0 auto;
 }
 
+.recordingStudio {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 400px;
+  border: 1px solid black;
+}
+
+/*
+STUDIO BACKGROUND
+    $recordingStudioBackground: teal;
+    $recordingStudioFloor: grey;
+
+INSTRUMENTS <- move universal colours here
+
+KEYBOARD
+    $white: white;
+    $black: black;
+
+GUITARS <- move generic variables here
+    $silver: silver;
+    $rosewood: #4b0000;
+    $nut: #fffdd0;
+
+ELECTRIC GUITAR
+    $guitarHead: #e9cda5;
+    $sunburstOrange: #ca731e;
+    $sunburstRed: #a42012;
+    $sunburstBlack: #1c0e06;
+    $cream: #edece8;
+
+*/
+.floor {
+  width: 100%;
+  height: 15%;
+  background: grey;
+}
+
 .keyboard {
   background: teal;
   width: 300px;
@@ -351,14 +390,14 @@ html {
   right: -10px;
 }
 
-.stand {
+.keyboardStand {
   position: relative;
   width: 100%;
-  height: calc(30% - 10px);
+  height: 30%;
   border-bottom: 10px solid white;
 }
 
-.stand .legs {
+.keyboardStand .legs {
   background: black;
   width: 200px;
   height: 10px;
@@ -367,17 +406,17 @@ html {
   left: 50px;
 }
 
-.stand .leg1 {
+.keyboardStand .leg1 {
   -webkit-transform: rotate(135deg);
           transform: rotate(135deg);
 }
 
-.stand .leg2 {
+.keyboardStand .leg2 {
   -webkit-transform: rotate(-135deg);
           transform: rotate(-135deg);
 }
 
-.stand .feet {
+.keyboardStand .feet {
   background: black;
   width: 15px;
   height: 15px;
@@ -385,28 +424,573 @@ html {
   position: absolute;
 }
 
-.stand .foot1, .stand .foot2 {
+.keyboardStand .foot1, .keyboardStand .foot2 {
   top: -5px;
 }
 
-.stand .foot1, .stand .foot3 {
+.keyboardStand .foot1, .keyboardStand .foot3 {
   left: 75px;
 }
 
-.stand .foot2, .stand .foot4 {
+.keyboardStand .foot2, .keyboardStand .foot4 {
   right: 75px;
 }
 
-.stand .foot3, .stand .foot4 {
+.keyboardStand .foot3, .keyboardStand .foot4 {
   bottom: -35px;
 }
 
-.floor {
+.electricGuitar {
+  background: teal;
+  width: 300px;
+  height: 400px;
+  position: relative;
+}
+
+.stratocaster {
   width: 100%;
-  height: 15%;
+  height: 55%;
+  position: relative;
+}
+
+.stratocaster .top {
+  width: 100px;
+  height: 200px;
+  position: relative;
+  margin: 0 auto;
+  padding-top: 15px;
+}
+
+.stratocaster .top .head {
+  position: absolute;
+  bottom: 88px;
+  left: calc(50% - 35px);
+  z-index: 10;
+}
+
+.stratocaster .top .head .topShape, .stratocaster .top .head .bottomShape {
+  background: #e9cda5;
+}
+
+.stratocaster .top .head .topShape {
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  position: absolute;
+  top: 1px;
+  left: 20px;
+}
+
+.stratocaster .top .head .bottomShape {
+  width: 70px;
+  height: 60px;
+  -webkit-clip-path: polygon(36% 25%, 50% 8%, 51% 9%, 54% 14%, 56% 23%, 70% 84%, 70% 86%, 68% 88%, 64% 91%, 62% 93%, 63% 100%, 37% 100%, 37% 92%, 36% 86%, 35% 83%, 34% 81%, 31% 79%, 30% 78%, 28% 77%, 26% 75%, 29% 66%, 35% 41%, 36% 32%, 36% 28%);
+          clip-path: polygon(36% 25%, 50% 8%, 51% 9%, 54% 14%, 56% 23%, 70% 84%, 70% 86%, 68% 88%, 64% 91%, 62% 93%, 63% 100%, 37% 100%, 37% 92%, 36% 86%, 35% 83%, 34% 81%, 31% 79%, 30% 78%, 28% 77%, 26% 75%, 29% 66%, 35% 41%, 36% 32%, 36% 28%);
+  margin: 0 auto;
+}
+
+.stratocaster .top .tuningPegs {
+  width: 3px;
+  height: auto;
+  margin: 0 auto;
+  position: absolute;
+  bottom: 112px;
+  left: 29px;
+  -webkit-transform: translate(31px, 12px) rotate(-15deg);
+          transform: translate(31px, 12px) rotate(-15deg);
+}
+
+.stratocaster .top .tuningPegs .tuningPeg {
+  width: 3px;
+  height: 3px;
+  background: silver;
+  margin-bottom: 4px;
+}
+
+.stratocaster .top .tuningPegs .tuningPeg:last-of-type {
+  margin: 0;
+}
+
+.stratocaster .top .tuningBars {
+  width: 5px;
+  height: auto;
+  -webkit-transform: rotate(-15deg);
+          transform: rotate(-15deg);
+  position: absolute;
+  bottom: 100px;
+  left: 56px;
+}
+
+.stratocaster .top .tuningBars .tuningBar {
+  width: 100%;
+  height: 1px;
+  background: silver;
+  margin-top: 6px;
+}
+
+.stratocaster .top .neck {
+  width: 18px;
+  height: 150px;
+  background: #4b0000;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(6%, #4b0000), color-stop(6%, silver), color-stop(7%, #4b0000), color-stop(13%, silver), color-stop(14%, #4b0000), color-stop(20%, silver), color-stop(21%, #4b0000), color-stop(26%, silver), color-stop(27%, #4b0000), color-stop(32%, silver), color-stop(33%, #4b0000), color-stop(38%, silver), color-stop(39%, #4b0000), color-stop(43%, silver), color-stop(44%, #4b0000), color-stop(48%, silver), color-stop(49%, #4b0000), color-stop(53%, silver), color-stop(54%, #4b0000), color-stop(57%, silver), color-stop(58%, #4b0000), color-stop(61%, silver), color-stop(62%, #4b0000), color-stop(65%, silver), color-stop(66%, #4b0000), color-stop(69%, silver), color-stop(70%, #4b0000), color-stop(72%, silver), color-stop(73%, #4b0000), color-stop(75%, silver), color-stop(76%, #4b0000), color-stop(78%, silver), color-stop(79%, #4b0000), color-stop(81%, silver), color-stop(82%, #4b0000), color-stop(84%, silver), color-stop(85%, #4b0000), color-stop(87%, silver), color-stop(88%, #4b0000), color-stop(90%, silver), color-stop(91%, #4b0000), color-stop(93%, silver), color-stop(94%, #4b0000));
+  background: linear-gradient(180deg, #4b0000 6%, silver 6% 7%, #4b0000 7% 13%, silver 13% 14%, #4b0000 14% 20%, silver 20% 21%, #4b0000 21% 26%, silver 26% 27%, #4b0000 27% 32%, silver 32% 33%, #4b0000 33% 38%, silver 38% 39%, #4b0000 39% 43%, silver 43% 44%, #4b0000 44% 48%, silver 48% 49%, #4b0000 49% 53%, silver 53% 54%, #4b0000 54% 57%, silver 57% 58%, #4b0000 58% 61%, silver 61% 62%, #4b0000 62% 65%, silver 65% 66%, #4b0000 66% 69%, silver 69% 70%, #4b0000 70% 72%, silver 72% 73%, #4b0000 73% 75%, silver 75% 76%, #4b0000 76% 78%, silver 78% 79%, #4b0000 79% 81%, silver 81% 82%, #4b0000 82% 84%, silver 84% 85%, #4b0000 85% 87%, silver 87% 88%, #4b0000 88% 90%, silver 90% 91%, #4b0000 91% 93%, silver 93% 94%, #4b0000 94%);
+  border-top: 1px solid #fffdd0;
+  position: absolute;
+  bottom: -62px;
+  left: calc(50% - 9px);
+  z-index: 20;
+}
+
+.stratocaster .body {
+  width: 124px;
+  height: 124px;
+  -webkit-clip-path: polygon(25% 50%, 24% 53%, 23% 55%, 22% 57%, 21% 59%, 20% 61%, 19% 63%, 18% 66%, 17% 69%, 16% 73%, 17% 80%, 19% 86%, 25% 93%, 33% 97%, 45% 99%, 55% 99%, 67% 97%, 75% 94%, 81% 90%, 84% 86%, 85% 84%, 86% 81%, 87% 77%, 87% 73%, 85% 67%, 83% 61%, 78% 52%, 76% 47%, 75% 38%, 76% 32%, 78% 25%, 79% 21%, 79% 17%, 79% 13%, 78% 9%, 77% 6%, 75% 3%, 73% 1%, 71% 0%, 70% 0%, 68% 1%, 67% 2%, 66% 4%, 67% 10%, 68% 15%, 67% 17%, 66% 18%, 65% 19%, 63% 20%, 61% 20%, 59% 19%, 58% 18%, 57% 17%, 56% 15%, 56% 0%, 43% 0%, 43% 25%, 42% 26%, 41% 27%, 39% 28%, 37% 28%, 35% 27%, 32% 24%, 31% 23%, 30% 22%, 29% 18%, 29% 10%, 28% 8%, 26% 7%, 25% 7%, 23% 10%, 22% 12%, 20% 16%, 19% 20%, 19% 25%, 20% 30%, 22% 35%, 25% 42%, 26% 46%);
+          clip-path: polygon(25% 50%, 24% 53%, 23% 55%, 22% 57%, 21% 59%, 20% 61%, 19% 63%, 18% 66%, 17% 69%, 16% 73%, 17% 80%, 19% 86%, 25% 93%, 33% 97%, 45% 99%, 55% 99%, 67% 97%, 75% 94%, 81% 90%, 84% 86%, 85% 84%, 86% 81%, 87% 77%, 87% 73%, 85% 67%, 83% 61%, 78% 52%, 76% 47%, 75% 38%, 76% 32%, 78% 25%, 79% 21%, 79% 17%, 79% 13%, 78% 9%, 77% 6%, 75% 3%, 73% 1%, 71% 0%, 70% 0%, 68% 1%, 67% 2%, 66% 4%, 67% 10%, 68% 15%, 67% 17%, 66% 18%, 65% 19%, 63% 20%, 61% 20%, 59% 19%, 58% 18%, 57% 17%, 56% 15%, 56% 0%, 43% 0%, 43% 25%, 42% 26%, 41% 27%, 39% 28%, 37% 28%, 35% 27%, 32% 24%, 31% 23%, 30% 22%, 29% 18%, 29% 10%, 28% 8%, 26% 7%, 25% 7%, 23% 10%, 22% 12%, 20% 16%, 19% 20%, 19% 25%, 20% 30%, 22% 35%, 25% 42%, 26% 46%);
+  background: #ca731e;
+  background: linear-gradient(135deg, #1c0e06 0% 40%, transparent 46%), linear-gradient(to right, #1c0e06 0% 20%, transparent 30% 75%, #1c0e06 82%), linear-gradient(-110deg, #1c0e06 0% 30%, #a42012 35%, transparent 40%), radial-gradient(#ca731e 40%, #a42012 55%, #1c0e06 65%);
+  position: absolute;
+  bottom: -143px;
+  left: calc(50% - 62px);
+  z-index: 10;
+}
+
+.stratocaster .body .guard {
+  width: 100%;
+  height: 100%;
+  -webkit-clip-path: polygon(27% 50%, 26% 53%, 25% 56%, 23% 60%, 22% 62%, 21% 64%, 20% 67%, 19% 70%, 18% 73%, 18% 75%, 19% 80%, 20% 81%, 21% 81%, 22% 80%, 24% 78%, 26% 77%, 28% 76%, 32% 75%, 40% 74%, 50% 74%, 62% 73%, 64% 72%, 65% 70%, 66% 66%, 65% 59%, 63% 55%, 60% 45%, 59% 37%, 60% 30%, 61% 26%, 61% 24%, 60% 22%, 59% 21%, 57% 21%, 41% 29%, 37% 30%, 35% 29%, 33% 28%, 30% 25%, 29% 24%, 28% 22%, 27% 18%, 27% 10%, 26% 9%, 25% 10%, 24% 12%, 22% 16%, 21% 20%, 21% 25%, 22% 30%, 24% 35%, 27% 42%, 28% 46%);
+          clip-path: polygon(27% 50%, 26% 53%, 25% 56%, 23% 60%, 22% 62%, 21% 64%, 20% 67%, 19% 70%, 18% 73%, 18% 75%, 19% 80%, 20% 81%, 21% 81%, 22% 80%, 24% 78%, 26% 77%, 28% 76%, 32% 75%, 40% 74%, 50% 74%, 62% 73%, 64% 72%, 65% 70%, 66% 66%, 65% 59%, 63% 55%, 60% 45%, 59% 37%, 60% 30%, 61% 26%, 61% 24%, 60% 22%, 59% 21%, 57% 21%, 41% 29%, 37% 30%, 35% 29%, 33% 28%, 30% 25%, 29% 24%, 28% 22%, 27% 18%, 27% 10%, 26% 9%, 25% 10%, 24% 12%, 22% 16%, 21% 20%, 21% 25%, 22% 30%, 24% 35%, 27% 42%, 28% 46%);
+  background: #edece8;
+}
+
+.stratocaster .body .pickups {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  width: 20px;
+  height: 50px;
+  position: absolute;
+  bottom: 35px;
+  left: calc(50% - 10px);
+}
+
+.stratocaster .body .pickups .pickupBar {
+  width: 100%;
+  height: 3px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: #edece8;
+  border-radius: 50px;
+  -webkit-box-shadow: 0 0 1px black;
+          box-shadow: 0 0 1px black;
+}
+
+.stratocaster .body .pickups .pickupBar:last-of-type {
+  -webkit-transform: rotate(-10deg);
+          transform: rotate(-10deg);
+}
+
+.stratocaster .body .pickups .pickupBar .pickup {
+  width: 2px;
+  height: 2px;
+  background: silver;
+  border-radius: 50%;
+}
+
+.stratocaster .body .controls {
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  bottom: 22px;
+  left: 24px;
+}
+
+.stratocaster .body .controls .pickupSelector {
+  width: 10px;
+  height: 1px;
+  background: black;
+  margin: 0 0 9px 5px;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  position: relative;
+}
+
+.stratocaster .body .controls .pickupSelector .switch {
+  width: 4px;
+  height: 3px;
+  background: #edece8;
+  border-radius: 78% 22% 22% 78% / 50% 50% 50% 50%;
+  -webkit-box-shadow: 0 0 1px black;
+          box-shadow: 0 0 1px black;
+  position: absolute;
+  top: -1px;
+  left: -1px;
+}
+
+.stratocaster .body .controls .knobs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-transform: rotate(-25deg);
+          transform: rotate(-25deg);
+}
+
+.stratocaster .body .controls .knobs .knob {
+  width: 4px;
+  height: 4px;
+  background: #edece8;
+  border-radius: 50px;
+  -webkit-box-shadow: 0 0 1px black;
+          box-shadow: 0 0 1px black;
+}
+
+.stratocaster .body .bridge {
+  width: 20px;
+  height: 12px;
+  background: silver;
+  border-radius: 2px 2px 2px 0;
+  position: absolute;
+  bottom: 23px;
+  left: calc(50% - 10px);
+}
+
+.stratocaster .body .bridge .tremoloBar {
+  width: 5px;
+  height: 5px;
+  background: silver;
+  border-radius: 2px 0 0 2px;
+  position: absolute;
+  bottom: 0;
+  left: -5px;
+}
+
+.stratocaster .body .bridge .tremoloBar .handle, .stratocaster .body .bridge .tremoloBar .handleEnd {
+  width: 1px;
+  -webkit-box-shadow: 0 0 1px black;
+          box-shadow: 0 0 1px black;
+  position: absolute;
+  left: 2px;
+}
+
+.stratocaster .body .bridge .tremoloBar .handle {
+  height: 20px;
+  border-radius: 20%;
+  background: silver;
+  top: 2px;
+}
+
+.stratocaster .body .bridge .tremoloBar .handleEnd {
+  height: 6px;
+  background: #edece8;
+  border-radius: 50%;
+  bottom: -21px;
+}
+
+.stratocaster .body .jackInput {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 15px;
+  height: 5px;
+  background: silver;
+  border-radius: 50%;
+  -webkit-transform: rotate(-25deg);
+          transform: rotate(-25deg);
+  position: absolute;
+  bottom: 20px;
+  left: 28px;
+}
+
+.stratocaster .body .jackInput .input {
+  width: 9px;
+  height: 3px;
   background: grey;
+  border-radius: 153px 50px 50px 153px / 65px 25px 25px 65px;
+  margin-left: 1px;
+}
+
+.stratocaster .strings {
+  width: 18px;
+  height: 260px;
+  position: absolute;
+  bottom: -89px;
+  left: calc(50% - 9px);
+  z-index: 20;
+}
+
+.stratocaster .strings .topNodes {
+  width: 100%;
+  height: 30px;
+  position: relative;
+  z-index: 10;
+}
+
+.stratocaster .strings .topNodes .topNode {
+  width: 4px;
+  height: 4px;
+  background: silver;
+  border-radius: 50%;
+  position: absolute;
+}
+
+.stratocaster .strings .topNodes .topNode1 {
+  bottom: -3px;
+  left: -1px;
+}
+
+.stratocaster .strings .topNodes .topNode2 {
+  bottom: -10px;
+  left: 3px;
+}
+
+.stratocaster .strings .topNodes .topNode3 {
+  bottom: -17px;
+  left: 6px;
+}
+
+.stratocaster .strings .topNodes .topNode4 {
+  bottom: -24px;
+  right: 4px;
+}
+
+.stratocaster .strings .topNodes .topNode5 {
+  bottom: -32px;
+  right: 1px;
+}
+
+.stratocaster .strings .topNodes .topNode6 {
+  bottom: -40px;
+  right: -2px;
+}
+
+.stratocaster .strings .flexString {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  width: 100%;
+  height: auto;
+}
+
+.stratocaster .strings .flexString .string {
+  width: 1px;
+  height: 218px;
+  background: #b08d57;
+  position: relative;
+}
+
+.stratocaster .strings .flexString .string .bottomNode {
+  width: 1px;
+  height: 3px;
+  background: grey;
+  border-radius: 2px;
+  -webkit-box-shadow: 0 0 1px black;
+          box-shadow: 0 0 1px black;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.stratocaster .strings .flexString .string1 {
+  height: 256px;
+}
+
+.stratocaster .strings .flexString .string2 {
+  height: 248px;
+}
+
+.stratocaster .strings .flexString .string3 {
+  height: 241px;
+}
+
+.stratocaster .strings .flexString .string4 {
+  height: 233px;
+}
+
+.stratocaster .strings .flexString .string5 {
+  height: 225px;
+}
+
+.guitarStand {
+  position: relative;
+  width: 100%;
+  height: 30%;
+  border-bottom: 10px solid white;
+}
+
+.guitarStand .topBrace, .guitarStand .bottomBrace {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.guitarStand .topBrace, .guitarStand .bottomBrace, .guitarStand .stand {
+  width: 100%;
+  height: auto;
+  position: absolute;
+}
+
+.guitarStand .topBrace {
+  top: -25px;
+}
+
+.guitarStand .bottomBrace {
+  bottom: -50px;
+}
+
+.guitarStand .bottomBrace .circle {
+  margin: 18px;
+}
+
+.guitarStand .circle {
+  width: 7px;
+  height: 7px;
+  background: black;
+  border-radius: 50%;
+  margin: 9px;
+}
+
+.guitarStand .stand {
+  bottom: -50px;
+}
+
+.guitarStand .stand .legs {
+  width: 50px;
+  height: 5px;
+  background: black;
+  margin: 0 auto;
+}
+
+.guitarStand .stand .leg1 {
+  -webkit-transform: translate(-20px, 5px) rotate(-30deg);
+          transform: translate(-20px, 5px) rotate(-30deg);
+}
+
+.guitarStand .stand .leg2 {
+  -webkit-transform: translateY(-25px) rotate(90deg);
+          transform: translateY(-25px) rotate(90deg);
+}
+
+.guitarStand .stand .leg3 {
+  -webkit-transform: translate(20px, -5px) rotate(30deg);
+          transform: translate(20px, -5px) rotate(30deg);
+}
+
+.amp {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 80px;
+  height: 75px;
+  background: black;
+  border-radius: 10px;
+  position: absolute;
+  bottom: 30px;
+  left: 20px;
+}
+
+.amp .controlPanel {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 60px;
+  height: 10px;
+  border: 1px solid white;
+}
+
+.amp .controlPanel .panel {
+  height: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.amp .controlPanel .panel .ampKnob {
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: silver;
+}
+
+.amp .controlPanel .panel1, .amp .controlPanel .panel2 {
+  width: 25%;
+}
+
+.amp .controlPanel .panel1 .input, .amp .controlPanel .panel2 .input {
+  width: 2px;
+  height: 2px;
+  border-radius: 50%;
+  border: 1px solid silver;
+}
+
+.amp .controlPanel .panel2 {
+  border-right: 1px solid white;
+  border-left: 1px solid white;
+}
+
+.amp .controlPanel .panel3 {
+  width: calc(50% - 2px);
+}
+
+.amp .controlPanel .panel3 .headphoneInput {
+  width: 1px;
+  height: 1px;
+  border-radius: 50%;
+  background: silver;
+}
+
+.amp .speaker {
+  width: 60px;
+  height: 45px;
+  background: silver;
+  background: repeating-linear-gradient(45deg, transparent, grey 1px), repeating-linear-gradient(-45deg, transparent, grey 1px);
+  border: 1px solid silver;
 }
 
 .hideInstrument {
-  visibility: hidden;
+  opacity: 0;
 }

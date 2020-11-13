@@ -1,16 +1,12 @@
 /* STEPS FOR CREATING AN INTERACTIVE RECORDING STUDIO
 
-- user selects instruments (from 1 to n) to be placed in their recording studio
-- instruments are represented by buttons that will toggle between showing and hiding their respective instruments depending on how many times the button has been clicked
-    - toggle having a "hidden" class to hide the objects
-- instruments will appear in their own recording studio section underneath the buttons
 - stretch goals:
     - have audio for each instrument
     - animate the instruments in some way so that they move when seen
         - or:
             - have part of the instruments move (e.g. strings)
             - have dancing music notes around each instrument
-    - have instruments appear in the order the buttons have been clicked instead of at a designated place on the screen
+    - have instruments appear in the order the buttons have been clicked instead of in a predetermined order
 */
 
 const studioApp = {};
@@ -23,7 +19,152 @@ studioApp.instruments = {
         audio: "to come"
     },
     electricGuitar: {
-        html: `electricGuitar Container`,
+        html: `
+        <div class="stratocaster">
+            <div class="top">
+            <div class="head">
+                <div class="topShape"></div>
+                <div class="bottomShape"></div>
+            </div>
+            <div class="tuningPegs">
+                <div class="tuningPeg peg1"></div>
+                <div class="tuningPeg peg2"></div>
+                <div class="tuningPeg peg3"></div>
+                <div class="tuningPeg peg4"></div>
+                <div class="tuningPeg peg5"></div>
+                <div class="tuningPeg peg6"></div>
+            </div>
+            <div class="tuningBars">
+                <div class="tuningBar bar1"></div>
+                <div class="tuningBar bar2"></div>
+                <div class="tuningBar bar3"></div>
+                <div class="tuningBar bar4"></div>
+                <div class="tuningBar bar5"></div>
+                <div class="tuningBar bar6"></div>
+            </div>
+            <div class="neck"></div>
+            </div>
+            <div class="body">
+            <div class="guard"></div>
+            <div class="pickups">
+                <div class="pickupBar">
+                <div class="pickup pickup1"></div>
+                <div class="pickup pickup2"></div>
+                <div class="pickup pickup3"></div>
+                <div class="pickup pickup4"></div>
+                <div class="pickup pickup5"></div>
+                <div class="pickup pickup6"></div>
+                </div>
+                <div class="pickupBar">
+                <div class="pickup pickup1"></div>
+                <div class="pickup pickup2"></div>
+                <div class="pickup pickup3"></div>
+                <div class="pickup pickup4"></div>
+                <div class="pickup pickup5"></div>
+                <div class="pickup pickup6"></div>
+                </div>
+                <div class="pickupBar">
+                <div class="pickup pickup1"></div>
+                <div class="pickup pickup2"></div>
+                <div class="pickup pickup3"></div>
+                <div class="pickup pickup4"></div>
+                <div class="pickup pickup5"></div>
+                <div class="pickup pickup6"></div>
+                </div>
+            </div>
+            <div class="controls">
+                <div class="pickupSelector">
+                <div class="switch"></div>
+                </div>
+                <div class="knobs">
+                <div class="knob knob1"></div>
+                <div class="knob knob2"></div>
+                <div class="knob knob3"></div>
+                </div>
+            </div>
+            <div class="bridge">
+                <div class="tremoloBar">
+                <div class="handle"></div>
+                <div class="handleEnd"></div>
+                </div>
+            </div>
+            <div class="jackInput">
+                <div class="input"></div>
+            </div>
+            </div>
+            <div class="strings">
+            <div class="topNodes">
+                <div class="topNode topNode1"></div>
+                <div class="topNode topNode2"></div>
+                <div class="topNode topNode3"></div>
+                <div class="topNode topNode4"></div>
+                <div class="topNode topNode5"></div>
+                <div class="topNode topNode6"></div>
+            </div>
+            <div class="flexString">
+                <div class="string string1">
+                <div class="bottomNode"></div>
+                </div>
+                <div class="string string2">
+                <div class="bottomNode"></div>
+                </div>
+                <div class="string string3">
+                <div class="bottomNode"></div>
+                </div>
+                <div class="string string4">
+                <div class="bottomNode"></div>
+                </div>
+                <div class="string string5">
+                <div class="bottomNode"></div>
+                </div>
+                <div class="string string6">
+                <div class="bottomNode"></div>
+                </div>
+            </div>
+            </div>
+        </div>
+        <div class="guitarStand">
+            <div class="topBrace">
+            <div class="circle leftCircle"></div>
+            <div class="circle rightCircle"></div>
+            </div>
+            <div class="bottomBrace">
+            <div class="circle leftCircle"></div>
+            <div class="circle rightCircle"></div>
+            </div>
+            <div class="stand">
+            <div class="legs leg1"></div>
+            <div class="legs leg2"></div>
+            <div class="legs leg3"></div>
+            </div>
+        </div>
+        <div class="amp">
+            <div class="controlPanel">
+            <div class="panel panel1">
+                <div class="input input1"></div>
+                <div class="input input2"></div>
+                <div class="ampKnob ampKnob1"></div>
+            </div>
+            <div class="panel panel2">
+                <!-- do these knobs need different numbers? -->
+                <div class="ampKnob ampKnob1"></div>
+                <div class="ampKnob ampKnob2"></div>
+                <div class="ampKnob ampKnob3"></div>
+            </div>
+            <div class="panel panel3">
+                <!-- do these knobs need different numbers? -->
+                <div class="ampKnob ampKnob1"></div>
+                <div class="ampKnob ampKnob2"></div>
+                <div class="ampKnob ampKnob3"></div>
+                <div class="ampKnob ampKnob4"></div>
+                <div class="headphoneInput headphone1"></div>
+                <div class="headphoneInput headphone2"></div>
+            </div>
+            </div>
+            <div class="speaker"></div>
+        </div>
+        <div class="floor"></div>
+        `,
         audio: "to come"
     },
     drumKit: {
@@ -31,30 +172,30 @@ studioApp.instruments = {
         audio: "to come"
     },
     keyboard: {
-        html: `<div class="keyboard">
-                    <div class="top">
-                        <div class="musicStand">
-                        <div class="horizontalBar bar1"></div>
-                        <div class="horizontalBar bar2"></div>
-                        <div class="horizontalBar bar3"></div>
-                        <div class="verticalBar bar4"></div>
-                        <div class="verticalBar bar5"></div>
-                        <div class="verticalBar bar6"></div>
-                        <div class="verticalBar bar7"></div>
-                        <div class="verticalBar bar8"></div>
-                        </div>
-                        <div class="keys"></div>
-                    </div>
-                    <div class="stand">
-                        <div class="legs leg1"></div>
-                        <div class="legs leg2"></div>
-                        <div class="feet foot1"></div>
-                        <div class="feet foot2"></div>
-                        <div class="feet foot3"></div>
-                        <div class="feet foot4"></div>
-                    </div>
-                    <div class="floor"></div>
-                </div>`,
+        html: `
+            <div class="top">
+                <div class="musicStand">
+                <div class="horizontalBar bar1"></div>
+                <div class="horizontalBar bar2"></div>
+                <div class="horizontalBar bar3"></div>
+                <div class="verticalBar bar4"></div>
+                <div class="verticalBar bar5"></div>
+                <div class="verticalBar bar6"></div>
+                <div class="verticalBar bar7"></div>
+                <div class="verticalBar bar8"></div>
+                </div>
+                <div class="keys"></div>
+            </div>
+            <div class="keyboardStand">
+                <div class="legs leg1"></div>
+                <div class="legs leg2"></div>
+                <div class="feet foot1"></div>
+                <div class="feet foot2"></div>
+                <div class="feet foot3"></div>
+                <div class="feet foot4"></div>
+            </div>
+            <div class="floor"></div>
+        `,
         audio: "to come"
     },
     acousticGuitar: {
@@ -63,45 +204,25 @@ studioApp.instruments = {
     }
 }
 
-// function that will create a section inside of the recordingStudio container to hold the selected instrument
+// function that will create a section inside of the recordingStudio container to hold the selected instrument by updating the html inside of the container
 studioApp.addInstrument = function(object, instrument) {
-    // this function will update the html inside the container
-
     // store instrument html in a variable.
     const revealInstrument = object[instrument].html;
-    console.log("Revealed Instrument:", revealInstrument, typeof revealInstrument);
 
-    // store result from for in loop in a variable
-    let instrumentName;
-
-    // use a for in loop to get property name that matches the $chosenInstrument
-    for (musicalInstrument in object) {
-        // find the div with the same class name (inside of the recordingStudio section) as the id of the button that was clicked
-        if (musicalInstrument === instrument) {
-            console.log("Musical Instrument:", musicalInstrument);
-            instrumentName = musicalInstrument;
-        }
-    }
-    
-    console.log("Instrument Name:", instrumentName);
+    // store the user's chosen instrument in a template literal to be used as a class name that will be used to:
+        // reveal the instrument on the page
+        // add/remove the class of hideInstrument so the instrument can disappear and reappear on the page
+    let instrumentName = `.${instrument}`;
     
     // either add or remove the class hideInstrument
-    // this will allow the instrument to appear and disappear from the page
-    // REVIEW instrumentName.toggleClass is not a function
-    instrumentName.toggleClass("hideInstrument");
-
-
-
-
-    // const $instrumentContainer = $(".recordingStudio").find(theInstrument);
-    // console.log("Instrument Container", $instrumentContainer, typeof $instrumentContainer);
-    // $instrumentContainer.toggleClass("hideInstrument");
-
+    const $instrumentContainer = $(".recordingStudio").find(instrumentName);
+    $instrumentContainer.toggleClass("hideInstrument");
 
     // display instrument to the page only if the instrument is not being hidden by the .hideInstrument class
     // REVIEW .html, .append, .text?
-    $(".recordingStudio").html(revealInstrument);
-    
+    $(instrumentName).html(revealInstrument);
+
+    // TODO add instrument audio
 }
 
 
@@ -120,16 +241,11 @@ studioApp.instrumentPicker = function() {
 
 // initialize studioApp
 studioApp.init = function() {
-    console.log("The app is initialized!");
-
     studioApp.instrumentPicker();
 }
 
 // doc ready
 $(function() {
-    // console test
-    console.log("I'm ready!");
-
     // initialize app
     studioApp.init();
 });

@@ -19,11 +19,36 @@ html {
 
 // COLOUR VARIABLES
 $recordingStudioBackground: teal;
+    // also used for jack input inset and string bottom nodes
+    // amp speaker gradient
 $recordingStudioFloor: grey;
 
     // SECTION colours specific to the instruments
     // keyboard
-        // sheet music, baseboard
+        // sheet music, baseboard, amp control panel
 $white: white;
-        // music stand, keyboard, keyboard stand
+        // music stand, keyboard, keyboard stand, 
+        // EG: pickup shadows, pickup selector, switch shadow, tone knob shadow, tremolo handle shadow + end shadow, string bottom node shadows
+        // all guitars: guitar stand, amp
 $black: black;
+
+    // all guitars
+        // tuning pegs, bridge, pickups, tremolo bar, tremolo handle, jack input, string top nodes
+        // amp speaker, knobs + inputs
+$silver: silver;
+        // rosewood fretboard
+$rosewood: #4b0000;
+        // nut at top of fretboard
+$nut: #fffdd0;
+        // strings
+$bronze: #b08d57;
+
+    // electric guitar
+        // guitar head
+$guitarHead: #e9cda5;
+        // sunburst colours for body
+$sunburstOrange: #ca731e;
+$sunburstRed: #a42012;
+$sunburstBlack: #1c0e06;
+    // pickguard, pickup bars, tone knobs, pickup switch, tremolo handle end
+$cream: #edece8;
