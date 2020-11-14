@@ -32,11 +32,13 @@ $white: white;
         // AG: bottom node border
         // EG: pickup shadows, pickup selector, switch shadow, tone knob shadow, tremolo handle shadow + end shadow, string bottom node shadows
         // all guitars: guitar stand, amp
+        // drums: tripod feet
 $black: black;
 
     // all guitars
         // tuning pegs, bridge, pickups, tremolo bar, tremolo handle, jack input, string top nodes
         // amp speaker, knobs + inputs
+    // drums: stands, drum rims
 $silver: silver;
         // rosewood fretboard, acoustic guitar head, acoustic guitar pickguard
 $rosewood: #4b0000;
@@ -69,3 +71,13 @@ $cream: #edece8;
 $lakePlacidBlue: #1d5b81;
         // pick guard
 $almostBlack: #030001;
+
+    // drums
+        // body
+$cranberry: #861819;
+$darkCranberry: #4a1713;
+        // cymbals
+$gold: #d4c3a6;
+        // drum skins
+$tan: #d2a180;
+$bassSkin: #21221c;

@@ -280,7 +280,113 @@ studioApp.instruments = {
         audio: "to come"
     },
     drumKit: {
-        html: `drumKit Container`,
+        html: `
+        <div class="drums">
+            <div class="cymbal rideCymbal"></div>
+            <div class="drum middleTom"></div>
+            <div class="drum highTom"></div>
+            <div class="cymbal crashCymbal"></div>
+            <div class="hiHat">
+                <div class="cymbal topHat"></div>
+                <div class="cymbal bottomHat"></div>
+            </div>
+            <div class="drum floorTom"></div>
+            <div class="drum bassDrum"></div>
+            <div class="drum snareDrum"></div>
+        </div>
+        <div class="drumStand">
+            <!-- floor tom stand -->
+            <div class="floorStand">
+                <div class="leg">
+                    <div class="foot"></div>
+                </div>
+            </div>
+            <!-- ride cymbal stand -->
+            <div class="cymbalStand stand1">
+                <div class="boom boom1"></div>
+                <div class="stand"></div>
+                <div class="tripod tripod1">
+                    <div class="leg leg1">
+                        <div class="foot foot1"></div>
+                    </div>
+                    <div class="leg leg2">
+                        <div class="foot foot2"></div>
+                    </div>
+                    <div class="leg leg3">
+                        <div class="foot foot3"></div>
+                    </div>
+                </div>
+            </div>
+            <!-- middle tom and high tom stand -->
+            <div class="topStand">
+                <div class="stand leftStand"></div>
+                <div class="stand centreStand"></div>
+                <div class="stand rightStand"></div>
+                <div class="brace"></div>
+            </div>
+            <!-- bass drum stand -->
+            <div class="bassStand">
+                <div class="leg leftLeg">
+                    <div class="foot"></div>
+                </div>
+                <div class="leg rightLeg">
+                    <div class="foot"></div>
+                </div>
+            </div>
+            <!-- snare drum stand -->
+            <div class="snareStand">
+                <div class="braces">
+                    <div class="brace brace1"></div>
+                    <div class="brace brace2"></div>
+                    <div class="brace brace3"></div>
+                </div>
+                <div class="stand"></div>
+                <div class="tripod tripod3">
+                    <div class="leg leg7">
+                        <div class="foot foot1"></div>
+                    </div>
+                    <div class="leg leg8">
+                        <div class="foot foot2"></div>
+                    </div>
+                    <div class="leg leg9">
+                        <div class="foot foot3"></div>
+                    </div>
+                </div>
+            </div>
+            <!-- crash cymbal stand -->
+            <div class="cymbalStand stand2">
+                <div class="boom boom2"></div>
+                <div class="stand"></div>
+                <div class="tripod tripod2">
+                    <div class="leg leg1">
+                        <div class="foot foot1"></div>
+                    </div>
+                    <div class="leg leg2">
+                        <div class="foot foot2"></div>
+                    </div>
+                    <div class="leg leg3">
+                        <div class="foot foot3"></div>
+                    </div>
+                </div>
+            </div>
+            <!-- hihat cymbal stand -->
+            <div class="cymbalStand stand3">
+                <div class="stand"></div>
+                <div class="tripod tripod3">
+                        <div class="leg leg4">
+                    <div class="foot foot1"></div>
+                    </div>
+                    <div class="leg leg5">
+                        <div class="foot foot2"></div>
+                    </div>
+                    <div class="leg leg6">
+                        <div class="foot foot3"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="floor"></div>
+        `,
         audio: "to come"
     },
     keyboard: {
