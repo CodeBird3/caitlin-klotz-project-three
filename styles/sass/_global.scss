@@ -26,8 +26,10 @@ $recordingStudioFloor: grey;
     // SECTION colours specific to the instruments
     // keyboard
         // sheet music, baseboard, amp control panel
+        // AG: centre of bottom nodes
 $white: white;
-        // music stand, keyboard, keyboard stand, 
+        // music stand, keyboard, keyboard stand
+        // AG: bottom node border
         // EG: pickup shadows, pickup selector, switch shadow, tone knob shadow, tremolo handle shadow + end shadow, string bottom node shadows
         // all guitars: guitar stand, amp
 $black: black;
@@ -36,12 +38,20 @@ $black: black;
         // tuning pegs, bridge, pickups, tremolo bar, tremolo handle, jack input, string top nodes
         // amp speaker, knobs + inputs
 $silver: silver;
-        // rosewood fretboard
+        // rosewood fretboard, acoustic guitar head, acoustic guitar pickguard
 $rosewood: #4b0000;
         // nut at top of fretboard
 $nut: #fffdd0;
         // strings
 $bronze: #b08d57;
+
+    // acoustic guitar
+        // guitar body
+$spruce: #e1b37e;
+        // sound hole
+$darkSpruce: #c67f48;
+        // sound hole rings
+$darkBrown: #815b40;
 
     // electric guitar
         // guitar head

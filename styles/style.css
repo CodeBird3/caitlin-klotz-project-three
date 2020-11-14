@@ -274,6 +274,7 @@ GUITARS <- move generic variables here
     $silver: silver;
     $rosewood: #4b0000;
     $nut: #fffdd0;
+    $bronze: #b08d57;
 
 ELECTRIC GUITAR
     $guitarHead: #e9cda5;
@@ -283,22 +284,180 @@ ELECTRIC GUITAR
     $cream: #edece8;
 
 */
-.floor {
-  width: 100%;
-  height: 15%;
-  background: grey;
-}
-
-.keyboard {
+.bassGuitar,
+.electricGuitar,
+.drumKit,
+.keyboard,
+.acousticGuitar {
   background: teal;
   width: 300px;
   height: 400px;
 }
 
-.top {
+.keyboard .top,
+.guitar,
+.stratocaster {
   width: 100%;
   height: 55%;
   position: relative;
+}
+
+.guitar .top,
+.stratocaster .top {
+  width: 100px;
+  height: 200px;
+  position: relative;
+  margin: 0 auto;
+  padding-top: 15px;
+}
+
+.guitar .top .head,
+.stratocaster .top .head {
+  z-index: 10;
+}
+
+.guitar .top .head, .guitar .top .tuningPegs, .guitar .top .tuningBars,
+.stratocaster .top .head,
+.stratocaster .top .tuningPegs,
+.stratocaster .top .tuningBars {
+  position: absolute;
+}
+
+.guitar .top .tuningPegs .tuningPeg,
+.stratocaster .top .tuningPegs .tuningPeg {
+  width: 3px;
+  height: 3px;
+  background: silver;
+}
+
+.guitar .top .tuningBars .tuningBar,
+.stratocaster .top .tuningBars .tuningBar {
+  width: 100%;
+  height: 1px;
+  background: silver;
+}
+
+.guitar .top .neck,
+.stratocaster .top .neck {
+  width: 18px;
+  height: 150px;
+  background: #4b0000;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(6%, #4b0000), color-stop(6%, silver), color-stop(7%, #4b0000), color-stop(13%, silver), color-stop(14%, #4b0000), color-stop(20%, silver), color-stop(21%, #4b0000), color-stop(26%, silver), color-stop(27%, #4b0000), color-stop(32%, silver), color-stop(33%, #4b0000), color-stop(38%, silver), color-stop(39%, #4b0000), color-stop(43%, silver), color-stop(44%, #4b0000), color-stop(48%, silver), color-stop(49%, #4b0000), color-stop(53%, silver), color-stop(54%, #4b0000), color-stop(57%, silver), color-stop(58%, #4b0000), color-stop(61%, silver), color-stop(62%, #4b0000), color-stop(65%, silver), color-stop(66%, #4b0000), color-stop(69%, silver), color-stop(70%, #4b0000), color-stop(72%, silver), color-stop(73%, #4b0000), color-stop(75%, silver), color-stop(76%, #4b0000), color-stop(78%, silver), color-stop(79%, #4b0000), color-stop(81%, silver), color-stop(82%, #4b0000), color-stop(84%, silver), color-stop(85%, #4b0000), color-stop(87%, silver), color-stop(88%, #4b0000), color-stop(90%, silver), color-stop(91%, #4b0000), color-stop(93%, silver), color-stop(94%, #4b0000));
+  background: linear-gradient(180deg, #4b0000 6%, silver 6% 7%, #4b0000 7% 13%, silver 13% 14%, #4b0000 14% 20%, silver 20% 21%, #4b0000 21% 26%, silver 26% 27%, #4b0000 27% 32%, silver 32% 33%, #4b0000 33% 38%, silver 38% 39%, #4b0000 39% 43%, silver 43% 44%, #4b0000 44% 48%, silver 48% 49%, #4b0000 49% 53%, silver 53% 54%, #4b0000 54% 57%, silver 57% 58%, #4b0000 58% 61%, silver 61% 62%, #4b0000 62% 65%, silver 65% 66%, #4b0000 66% 69%, silver 69% 70%, #4b0000 70% 72%, silver 72% 73%, #4b0000 73% 75%, silver 75% 76%, #4b0000 76% 78%, silver 78% 79%, #4b0000 79% 81%, silver 81% 82%, #4b0000 82% 84%, silver 84% 85%, #4b0000 85% 87%, silver 87% 88%, #4b0000 88% 90%, silver 90% 91%, #4b0000 91% 93%, silver 93% 94%, #4b0000 94%);
+  border-top: 1px solid #fffdd0;
+  position: absolute;
+  left: calc(50% - 9px);
+  z-index: 20;
+}
+
+.strings {
+  width: 18px;
+  height: 260px;
+  position: absolute;
+  left: calc(50% - 9px);
+  z-index: 20;
+}
+
+.strings .topNodes {
+  width: 100%;
+  height: 30px;
+  position: relative;
+  z-index: 10;
+}
+
+.strings .topNodes .topNode {
+  background: silver;
+  border-radius: 50%;
+  position: absolute;
+}
+
+.flexString {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+  height: auto;
+}
+
+.flexString .string {
+  width: 1px;
+  background: #b08d57;
+  position: relative;
+}
+
+.flexString .string .bottomNode {
+  width: 1px;
+  position: absolute;
+  bottom: 0;
+}
+
+.guitarStand {
+  position: relative;
+  width: 100%;
+  height: 30%;
+  border-bottom: 10px solid white;
+}
+
+.guitarStand .topBrace, .guitarStand .bottomBrace {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.guitarStand .topBrace, .guitarStand .bottomBrace, .guitarStand .stand {
+  width: 100%;
+  height: auto;
+  position: absolute;
+}
+
+.guitarStand .topBrace {
+  top: -25px;
+}
+
+.guitarStand .bottomBrace .circle {
+  margin: 18px;
+}
+
+.guitarStand .circle {
+  width: 7px;
+  height: 7px;
+  background: black;
+  border-radius: 50%;
+  margin: 9px;
+}
+
+.guitarStand .stand .legs {
+  width: 50px;
+  height: 5px;
+  background: black;
+  margin: 0 auto;
+}
+
+.guitarStand .stand .leg1 {
+  -webkit-transform: translate(-20px, 5px) rotate(-30deg);
+          transform: translate(-20px, 5px) rotate(-30deg);
+}
+
+.guitarStand .stand .leg2 {
+  -webkit-transform: translateY(-25px) rotate(90deg);
+          transform: translateY(-25px) rotate(90deg);
+}
+
+.guitarStand .stand .leg3 {
+  -webkit-transform: translate(20px, -5px) rotate(30deg);
+          transform: translate(20px, -5px) rotate(30deg);
+}
+
+.floor {
+  width: 100%;
+  height: 15%;
+  background: grey;
 }
 
 .top .musicStand {
@@ -433,39 +592,259 @@ ELECTRIC GUITAR
 }
 
 .keyboardStand .foot2, .keyboardStand .foot4 {
-  right: 75px;
+  right: 63px;
 }
 
 .keyboardStand .foot3, .keyboardStand .foot4 {
   bottom: -35px;
 }
 
-.electricGuitar {
-  background: teal;
-  width: 300px;
-  height: 400px;
-  position: relative;
+.guitar .top .head {
+  width: 34px;
+  height: 34px;
+  background: #4b0000;
+  -webkit-clip-path: polygon(15% 0, 85% 0, 80% 100%, 20% 100%);
+          clip-path: polygon(15% 0, 85% 0, 80% 100%, 20% 100%);
+  bottom: 89px;
+  left: calc(50% - 17px);
 }
 
-.stratocaster {
-  width: 100%;
-  height: 55%;
-  position: relative;
+.guitar .top .tuningPegs, .guitar .top .tuningBars {
+  width: calc(100%/3);
+  left: calc(100%/3);
 }
 
-.stratocaster .top {
+.guitar .top .tuningPegs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-line-pack: justify;
+      align-content: space-between;
+  height: 24px;
+  bottom: 94px;
+}
+
+.guitar .top .tuningPegs .tuningPeg {
+  margin-bottom: 5px;
+}
+
+.guitar .top .tuningBars {
+  height: auto;
+  bottom: 100px;
+}
+
+.guitar .top .tuningBars .tuningBar {
+  margin-top: 7px;
+}
+
+.guitar .top .neck {
+  bottom: -61px;
+}
+
+.guitar .body {
   width: 100px;
-  height: 200px;
-  position: relative;
+  height: 150px;
   margin: 0 auto;
-  padding-top: 15px;
+  position: relative;
+  z-index: 10;
+}
+
+.guitar .body .topHalf, .guitar .body .bottomHalf {
+  background: #e1b37e;
+}
+
+.guitar .body .topHalf,
+.guitar .body .bottomHalf,
+.guitar .body .side,
+.guitar .body .pickGuard,
+.guitar .body .soundHole,
+.guitar .body .bridge {
+  position: absolute;
+}
+
+.guitar .body .topHalf {
+  width: 75%;
+  height: 50%;
+  border-radius: 50% 50% 50% 50% / 36% 36% 64% 64%;
+  left: calc(50% - (75%/2));
+  top: 20px;
+}
+
+.guitar .body .bottomHalf {
+  width: 100%;
+  height: 66.66667%;
+  border-radius: 50% 50% 50% 50% / 65% 65% 35% 35%;
+  bottom: -10px;
+}
+
+.guitar .body .side {
+  width: 15px;
+  height: 26px;
+  background: transparent;
+  border-radius: 50% 50% 50% 50% / 50% 50% 50% 50%;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 7px solid #e1b37e;
+  top: 57px;
+  right: 8px;
+}
+
+.guitar .body .leftSide {
+  height: 27px;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+  left: 8px;
+}
+
+.guitar .body .pickGuard {
+  width: 20px;
+  height: 60px;
+  background: #4b0000;
+  border-radius: 97% 3% 73% 27% / 85% 100% 0% 15%;
+  top: 52px;
+  left: 20px;
+}
+
+.guitar .body .soundHole {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #c67f48;
+  -webkit-box-shadow: 0px 0px 0px 2px #e1b37e, 0px 0px 0px 3px #815b40, 0px 0px 0px 4px #e1b37e, 0px 0px 0px 5px #815b40;
+          box-shadow: 0px 0px 0px 2px #e1b37e, 0px 0px 0px 3px #815b40, 0px 0px 0px 4px #e1b37e, 0px 0px 0px 5px #815b40;
+  top: 60px;
+  left: calc(50% - 16px);
+  border: 1px solid #815b40;
+}
+
+.guitar .body .bridge {
+  width: 46px;
+  height: 46px;
+  background: #4b0000;
+  -webkit-clip-path: polygon(94% 26%, 6% 26%, 5% 39%, 19% 41%, 25% 45%, 33% 54%, 43% 59%, 57% 59%, 67% 54%, 75% 45%, 81% 41%, 95% 39%);
+          clip-path: polygon(94% 26%, 6% 26%, 5% 39%, 19% 41%, 25% 45%, 33% 54%, 43% 59%, 57% 59%, 67% 54%, 75% 45%, 81% 41%, 95% 39%);
+  left: calc(50% - 23px);
+  bottom: 3px;
+}
+
+.guitar .strings {
+  top: 80px;
+}
+
+.guitar .strings .topNode {
+  width: 3px;
+  height: 3px;
+}
+
+.guitar .strings .topNode1 {
+  top: 2px;
+  left: -0.5px;
+}
+
+.guitar .strings .topNode2 {
+  top: 2px;
+  right: -0.5px;
+}
+
+.guitar .strings .topNode3 {
+  top: 10px;
+  left: 0;
+}
+
+.guitar .strings .topNode4 {
+  top: 10px;
+  right: 0;
+}
+
+.guitar .strings .topNode5 {
+  bottom: 9px;
+  left: 0.5px;
+}
+
+.guitar .strings .topNode6 {
+  bottom: 9px;
+  right: 0.5px;
+}
+
+.guitar .strings .flexString .string {
+  height: 211px;
+}
+
+.guitar .strings .flexString .string .angledString {
+  width: 1px;
+  height: 12px;
+  background: #b08d57;
+  position: absolute;
+  top: -10px;
+}
+
+.guitar .strings .flexString .string .angledString1 {
+  -webkit-transform: translateX(1px) rotate(10deg);
+          transform: translateX(1px) rotate(10deg);
+}
+
+.guitar .strings .flexString .string .angledString2 {
+  height: 20px;
+  top: -18px;
+  -webkit-transform: translateX(-1px) rotate(-5deg);
+          transform: translateX(-1px) rotate(-5deg);
+}
+
+.guitar .strings .flexString .string .angledString3 {
+  height: 30px;
+  top: -28px;
+  -webkit-transform: translateX(-3px) rotate(-11deg);
+          transform: translateX(-3px) rotate(-11deg);
+}
+
+.guitar .strings .flexString .string .angledString4 {
+  height: 30px;
+  top: -28px;
+  -webkit-transform: translateX(3px) rotate(11deg);
+          transform: translateX(3px) rotate(11deg);
+}
+
+.guitar .strings .flexString .string .angledString5 {
+  height: 20px;
+  top: -18px;
+  -webkit-transform: translateX(1px) rotate(5deg);
+          transform: translateX(1px) rotate(5deg);
+}
+
+.guitar .strings .flexString .string .angledString6 {
+  -webkit-transform: translateX(-1px) rotate(-10deg);
+          transform: translateX(-1px) rotate(-10deg);
+}
+
+.guitar .strings .flexString .string .bottomNode {
+  height: 1px;
+  background: white;
+  border: 1px solid black;
+  border-radius: 50%;
+  left: -1px;
+}
+
+.guitarStand .bottomBrace {
+  bottom: -55px;
+}
+
+.guitarStand .stand {
+  bottom: -55px;
+}
+
+.electricGuitar {
+  position: relative;
 }
 
 .stratocaster .top .head {
-  position: absolute;
-  bottom: 88px;
+  bottom: 73px;
   left: calc(50% - 35px);
-  z-index: 10;
 }
 
 .stratocaster .top .head .topShape, .stratocaster .top .head .bottomShape {
@@ -486,24 +865,21 @@ ELECTRIC GUITAR
   height: 60px;
   -webkit-clip-path: polygon(36% 25%, 50% 8%, 51% 9%, 54% 14%, 56% 23%, 70% 84%, 70% 86%, 68% 88%, 64% 91%, 62% 93%, 63% 100%, 37% 100%, 37% 92%, 36% 86%, 35% 83%, 34% 81%, 31% 79%, 30% 78%, 28% 77%, 26% 75%, 29% 66%, 35% 41%, 36% 32%, 36% 28%);
           clip-path: polygon(36% 25%, 50% 8%, 51% 9%, 54% 14%, 56% 23%, 70% 84%, 70% 86%, 68% 88%, 64% 91%, 62% 93%, 63% 100%, 37% 100%, 37% 92%, 36% 86%, 35% 83%, 34% 81%, 31% 79%, 30% 78%, 28% 77%, 26% 75%, 29% 66%, 35% 41%, 36% 32%, 36% 28%);
-  margin: 0 auto;
+}
+
+.stratocaster .top .tuningPegs, .stratocaster .top .tuningBars {
+  height: auto;
 }
 
 .stratocaster .top .tuningPegs {
   width: 3px;
-  height: auto;
-  margin: 0 auto;
-  position: absolute;
-  bottom: 112px;
+  bottom: 99px;
   left: 29px;
   -webkit-transform: translate(31px, 12px) rotate(-15deg);
           transform: translate(31px, 12px) rotate(-15deg);
 }
 
 .stratocaster .top .tuningPegs .tuningPeg {
-  width: 3px;
-  height: 3px;
-  background: silver;
   margin-bottom: 4px;
 }
 
@@ -513,32 +889,18 @@ ELECTRIC GUITAR
 
 .stratocaster .top .tuningBars {
   width: 5px;
-  height: auto;
   -webkit-transform: rotate(-15deg);
           transform: rotate(-15deg);
-  position: absolute;
-  bottom: 100px;
+  bottom: 87px;
   left: 56px;
 }
 
 .stratocaster .top .tuningBars .tuningBar {
-  width: 100%;
-  height: 1px;
-  background: silver;
   margin-top: 6px;
 }
 
 .stratocaster .top .neck {
-  width: 18px;
-  height: 150px;
-  background: #4b0000;
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(6%, #4b0000), color-stop(6%, silver), color-stop(7%, #4b0000), color-stop(13%, silver), color-stop(14%, #4b0000), color-stop(20%, silver), color-stop(21%, #4b0000), color-stop(26%, silver), color-stop(27%, #4b0000), color-stop(32%, silver), color-stop(33%, #4b0000), color-stop(38%, silver), color-stop(39%, #4b0000), color-stop(43%, silver), color-stop(44%, #4b0000), color-stop(48%, silver), color-stop(49%, #4b0000), color-stop(53%, silver), color-stop(54%, #4b0000), color-stop(57%, silver), color-stop(58%, #4b0000), color-stop(61%, silver), color-stop(62%, #4b0000), color-stop(65%, silver), color-stop(66%, #4b0000), color-stop(69%, silver), color-stop(70%, #4b0000), color-stop(72%, silver), color-stop(73%, #4b0000), color-stop(75%, silver), color-stop(76%, #4b0000), color-stop(78%, silver), color-stop(79%, #4b0000), color-stop(81%, silver), color-stop(82%, #4b0000), color-stop(84%, silver), color-stop(85%, #4b0000), color-stop(87%, silver), color-stop(88%, #4b0000), color-stop(90%, silver), color-stop(91%, #4b0000), color-stop(93%, silver), color-stop(94%, #4b0000));
-  background: linear-gradient(180deg, #4b0000 6%, silver 6% 7%, #4b0000 7% 13%, silver 13% 14%, #4b0000 14% 20%, silver 20% 21%, #4b0000 21% 26%, silver 26% 27%, #4b0000 27% 32%, silver 32% 33%, #4b0000 33% 38%, silver 38% 39%, #4b0000 39% 43%, silver 43% 44%, #4b0000 44% 48%, silver 48% 49%, #4b0000 49% 53%, silver 53% 54%, #4b0000 54% 57%, silver 57% 58%, #4b0000 58% 61%, silver 61% 62%, #4b0000 62% 65%, silver 65% 66%, #4b0000 66% 69%, silver 69% 70%, #4b0000 70% 72%, silver 72% 73%, #4b0000 73% 75%, silver 75% 76%, #4b0000 76% 78%, silver 78% 79%, #4b0000 79% 81%, silver 81% 82%, #4b0000 82% 84%, silver 84% 85%, #4b0000 85% 87%, silver 87% 88%, #4b0000 88% 90%, silver 90% 91%, #4b0000 91% 93%, silver 93% 94%, #4b0000 94%);
-  border-top: 1px solid #fffdd0;
-  position: absolute;
-  bottom: -62px;
-  left: calc(50% - 9px);
-  z-index: 20;
+  bottom: -77px;
 }
 
 .stratocaster .body {
@@ -727,89 +1089,60 @@ ELECTRIC GUITAR
 }
 
 .stratocaster .strings {
-  width: 18px;
-  height: 260px;
-  position: absolute;
   bottom: -89px;
-  left: calc(50% - 9px);
-  z-index: 20;
 }
 
-.stratocaster .strings .topNodes {
-  width: 100%;
-  height: 30px;
-  position: relative;
-  z-index: 10;
-}
-
-.stratocaster .strings .topNodes .topNode {
+.stratocaster .strings .topNode {
   width: 4px;
   height: 4px;
-  background: silver;
-  border-radius: 50%;
-  position: absolute;
 }
 
-.stratocaster .strings .topNodes .topNode1 {
+.stratocaster .strings .topNode1 {
   bottom: -3px;
   left: -1px;
 }
 
-.stratocaster .strings .topNodes .topNode2 {
+.stratocaster .strings .topNode2 {
   bottom: -10px;
   left: 3px;
 }
 
-.stratocaster .strings .topNodes .topNode3 {
+.stratocaster .strings .topNode3 {
   bottom: -17px;
   left: 6px;
 }
 
-.stratocaster .strings .topNodes .topNode4 {
+.stratocaster .strings .topNode4 {
   bottom: -24px;
   right: 4px;
 }
 
-.stratocaster .strings .topNodes .topNode5 {
+.stratocaster .strings .topNode5 {
   bottom: -32px;
   right: 1px;
 }
 
-.stratocaster .strings .topNodes .topNode6 {
+.stratocaster .strings .topNode6 {
   bottom: -40px;
   right: -2px;
 }
 
 .stratocaster .strings .flexString {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
-  width: 100%;
-  height: auto;
 }
 
 .stratocaster .strings .flexString .string {
-  width: 1px;
   height: 218px;
-  background: #b08d57;
-  position: relative;
 }
 
 .stratocaster .strings .flexString .string .bottomNode {
-  width: 1px;
   height: 3px;
   background: grey;
   border-radius: 2px;
   -webkit-box-shadow: 0 0 1px black;
           box-shadow: 0 0 1px black;
-  position: absolute;
-  bottom: 0;
   left: 0;
 }
 
@@ -833,72 +1166,12 @@ ELECTRIC GUITAR
   height: 225px;
 }
 
-.guitarStand {
-  position: relative;
-  width: 100%;
-  height: 30%;
-  border-bottom: 10px solid white;
-}
-
-.guitarStand .topBrace, .guitarStand .bottomBrace {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-.guitarStand .topBrace, .guitarStand .bottomBrace, .guitarStand .stand {
-  width: 100%;
-  height: auto;
-  position: absolute;
-}
-
-.guitarStand .topBrace {
-  top: -25px;
-}
-
 .guitarStand .bottomBrace {
   bottom: -50px;
 }
 
-.guitarStand .bottomBrace .circle {
-  margin: 18px;
-}
-
-.guitarStand .circle {
-  width: 7px;
-  height: 7px;
-  background: black;
-  border-radius: 50%;
-  margin: 9px;
-}
-
 .guitarStand .stand {
   bottom: -50px;
-}
-
-.guitarStand .stand .legs {
-  width: 50px;
-  height: 5px;
-  background: black;
-  margin: 0 auto;
-}
-
-.guitarStand .stand .leg1 {
-  -webkit-transform: translate(-20px, 5px) rotate(-30deg);
-          transform: translate(-20px, 5px) rotate(-30deg);
-}
-
-.guitarStand .stand .leg2 {
-  -webkit-transform: translateY(-25px) rotate(90deg);
-          transform: translateY(-25px) rotate(90deg);
-}
-
-.guitarStand .stand .leg3 {
-  -webkit-transform: translate(20px, -5px) rotate(30deg);
-          transform: translate(20px, -5px) rotate(30deg);
 }
 
 .amp {
