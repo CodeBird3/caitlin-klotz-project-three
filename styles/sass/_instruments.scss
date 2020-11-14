@@ -7,7 +7,6 @@
 .drumKit,
 .keyboard,
 .acousticGuitar {
-    background: $recordingStudioBackground;
     width: 300px;
     height: 400px;
 }
@@ -241,7 +240,6 @@
     position: relative;
     width: 100%;
     height: 30%;
-    border-bottom: 10px solid $white;
 }
     // guitar stand
 .guitarStand {
@@ -263,7 +261,7 @@
 
 
     .bottomBrace {
-        bottom: -50px;
+        bottom: -41px;
 
         .circle {
             margin: 18px;
@@ -282,7 +280,7 @@
         width: 100%;
         height: auto;
         position: absolute;
-        bottom: -50px;
+        bottom: -41px;
 
         .legs {
             width: 50px;
@@ -377,13 +375,6 @@
     }
 }
 
-    // bottom section of background
-.floor {
-    width: 100%;
-    height: 15%;
-    background: $recordingStudioFloor;
-}
-
 // SECTION keyboard
 .top {
 
@@ -396,54 +387,39 @@
         bottom: 30px;
         left: 120px;
 
-        .horizontalBar {
-            background: $black;
-            width: 100%;
-            height: 5px;
+        .horizontalBars, .verticalBars {
+            width: inherit;
+            height: inherit;
+        }
+
+        .horizontalBars {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            .horizontalBar {
+                background: $black;
+                width: 100%;
+                height: 5px;
+            }
+    
+            .bar1 {
+                border-radius: 10px 10px 0 0;
+            }
+        }
+
+        .verticalBars {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
             position: absolute;
-        }
+            top: 0;
 
-        .bar1 {
-            border-radius: 10px 10px 0 0;
-        }
-
-        .bar2 {
-            top: calc(50% - 2.5px);
-        }
-
-        .bar3 {
-            bottom: 0;
-        }
-
-        .verticalBar {
-            background: $black;
-            width: 50%;
-            height: 5px;
-            transform: rotate(90deg);
-            position: absolute;
-        }
-        .bar4, .bar5, .bar6, .bar7, .bar8 {
-            top: 50%;
-        }
-
-        .bar4 {
-            left: -12.5px;
-        }
-
-        .bar5 {
-            left: 1px;
-        }
-
-        .bar6 {
-            left: 25%;
-        }
-
-        .bar7 {
-            right: 1px;
-        }
-
-        .bar8 {
-            right: -12.5px;
+            .verticalBar {
+                background: $black;
+                width: 5px;
+                height: 90%;
+            }
         }
     }
 
@@ -483,7 +459,7 @@
         width: 200px;
         height: 10px;
         position: absolute;
-        top:60%;
+        top: 65px;
         left: 50px;
     }
 
@@ -512,11 +488,11 @@
     }
 
     .foot2, .foot4 {
-        right: 63px;
+        left: 210px;
     }
 
     .foot3, .foot4 {
-        bottom: -35px;
+        bottom: -24px;
     }
 }
 
@@ -1374,7 +1350,7 @@
 
     .stand3 {
         right: 7px;
-        bottom: -15px;
+        bottom: -5px;
     }
 
     .snareStand {
@@ -1453,7 +1429,7 @@
         width: 25px;
         height: auto;
         position: absolute;
-        bottom: -50px;
+        bottom: -40px;
         left: 50px;
 
         .leg {
@@ -1479,7 +1455,7 @@
         width: 30px;
         height: 40px;
         position: absolute;
-        top: -7px;
+        top: -2px;
         left: calc(50% - 15px);
         z-index: 10;
         display: flex;
@@ -1514,7 +1490,7 @@
         width: 100px;
         height: 50px;
         position: absolute;
-        bottom: -50px;
+        bottom: -40px;
         left: calc(50% - 50px);
         z-index: 10;
 

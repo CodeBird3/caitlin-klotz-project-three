@@ -393,14 +393,18 @@ studioApp.instruments = {
         html: `
             <div class="top">
                 <div class="musicStand">
-                    <div class="horizontalBar bar1"></div>
-                    <div class="horizontalBar bar2"></div>
-                    <div class="horizontalBar bar3"></div>
-                    <div class="verticalBar bar4"></div>
-                    <div class="verticalBar bar5"></div>
-                    <div class="verticalBar bar6"></div>
-                    <div class="verticalBar bar7"></div>
-                    <div class="verticalBar bar8"></div>
+                    <div class="horizontalBars">
+                        <div class="horizontalBar bar1"></div>
+                        <div class="horizontalBar bar2"></div>
+                        <div class="horizontalBar bar3"></div>
+                    </div>
+                    <div class="verticalBars">
+                        <div class="verticalBar bar4"></div>
+                        <div class="verticalBar bar5"></div>
+                        <div class="verticalBar bar6"></div>
+                        <div class="verticalBar bar7"></div>
+                        <div class="verticalBar bar8"></div>
+                    </div>
                 </div>
                 <div class="keys"></div>
             </div>
@@ -538,9 +542,34 @@ studioApp.instrumentPicker = function() {
     });
 }
 
+// resize instrument containers with window/viewport size
+studioApp.resizeInstruments = function() {
+    // store instrument containers, and their height and width properties, in variables
+    let $instrument = $(".instrument");
+    let $instrumentWidth = $instrument.outerWidth();
+    let $instrumentHeight = $instrument.outerHeight();
+
+    // listen for the window/viewport to change in size
+        // REVIEW does this take into account different screen sizes at the start?
+    $(window).on("resize", function() {
+        // create a variable that will scale the width and height of the instrument containers in proportion to the change in the window/viewport size
+        // the aspect ratio for each instrument container is 3 : 4
+        // as the width of the window/viewport decreases, the ratio should decrease accordingly
+            // 1.5 : 2      ---> 50%
+            // 1 : 1.33     ---> 33.33%
+            // 0.75 : 1     ---> 25%
+            // 0.6 : 0.8    ---> 20%
+        // each instrument needs to be 20% of the width
+            // at 1500px: 300px
+            // at 750px: 150px
+            // at 500px: 100px
+    });
+}
+
 // initialize studioApp
 studioApp.init = function() {
     studioApp.instrumentPicker();
+    studioApp.resizeInstruments();
 }
 
 // doc ready
