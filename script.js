@@ -15,7 +15,121 @@ const studioApp = {};
 studioApp.instruments = {
     // NOTE these are not necessarily objects
     bassGuitar: {
-        html: `bassGuitar Container`,
+        html: `
+        <div class="bass">
+            <div class="top">
+                <div class="head">
+                    <div class="topShape"></div>
+                    <div class="bottomShape"></div>
+                </div>
+                <div class="tuningPegs">
+                    <div class="tuningPeg peg1"></div>
+                    <div class="tuningPeg peg2"></div>
+                    <div class="tuningPeg peg3"></div>
+                    <div class="tuningPeg peg4"></div>
+                </div>
+                <div class="tuningBars">
+                    <div class="tuningBar bar1"></div>
+                    <div class="tuningBar bar2"></div>
+                    <div class="tuningBar bar3"></div>
+                    <div class="tuningBar bar4"></div>
+                </div>
+                <div class="neck"></div>
+            </div>
+            <div class="body">
+                <div class="guard"></div>
+                <div class="pickups">
+                    <div class="pickupBar">
+                        <div class="pickup pickup1"></div>
+                        <div class="pickup pickup2"></div>
+                        <div class="pickup pickup3"></div>
+                        <div class="pickup pickup4"></div>
+                    </div>
+                    <div class="pickupBar">
+                        <div class="pickup pickup1"></div>
+                        <div class="pickup pickup2"></div>
+                        <div class="pickup pickup3"></div>
+                        <div class="pickup pickup4"></div>
+                    </div>
+                    <div class="pickupBar">
+                        <div class="pickup pickup1"></div>
+                        <div class="pickup pickup2"></div>
+                        <div class="pickup pickup3"></div>
+                        <div class="pickup pickup4"></div>
+                    </div>
+                </div>
+                <div class="controls">
+                    <div class="knobs">
+                        <div class="knob knob1"></div>
+                        <div class="knob knob2"></div>
+                        <div class="knob knob3"></div>
+                    </div>
+                </div>
+                <div class="bridge"></div>
+            </div>
+            <div class="strings">
+                <div class="topNodes">
+                    <div class="topNode topNode1"></div>
+                    <div class="topNode topNode2"></div>
+                    <div class="topNode topNode3"></div>
+                    <div class="topNode topNode4"></div>
+                </div>
+                <div class="flexString">
+                    <div class="string string1">
+                        <div class="bottomNode"></div>
+                    </div>
+                    <div class="string string2">
+                        <div class="bottomNode"></div>
+                    </div>
+                    <div class="string string3">
+                        <div class="bottomNode"></div>
+                    </div>
+                    <div class="string string4">
+                        <div class="bottomNode"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="guitarStand">
+            <div class="topBrace">
+                <div class="circle leftCircle"></div>
+                <div class="circle rightCircle"></div>
+            </div>
+            <div class="bottomBrace">
+                <div class="circle leftCircle"></div>
+                <div class="circle rightCircle"></div>
+            </div>
+            <div class="stand">
+                <div class="legs leg1"></div>
+                <div class="legs leg2"></div>
+                <div class="legs leg3"></div>
+            </div>
+        </div>
+        <div class="amp">
+            <div class="controlPanel">
+                <div class="panel panel1">
+                    <div class="input input1"></div>
+                    <div class="input input2"></div>
+                    <div class="ampKnob ampKnob1"></div>
+                </div>
+                <div class="panel panel2">
+                    <div class="ampKnob ampKnob1"></div>
+                    <div class="ampKnob ampKnob2"></div>
+                    <div class="ampKnob ampKnob3"></div>
+                </div>
+                <div class="panel panel3">
+                    <div class="ampKnob ampKnob1"></div>
+                    <div class="ampKnob ampKnob2"></div>
+                    <div class="ampKnob ampKnob3"></div>
+                    <div class="ampKnob ampKnob4"></div>
+                    <div class="headphoneInput headphone1"></div>
+                    <div class="headphoneInput headphone2"></div>
+                </div>
+            </div>
+            <div class="speaker"></div>
+        </div>
+        <div class="floor"></div>
+        `,
         audio: "to come"
     },
     electricGuitar: {

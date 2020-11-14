@@ -12,20 +12,25 @@
     height: 400px;
 }
 
+.bassGuitar, .electricGuitar {
+    position: relative;
+}
+
     // top section of background
         // REVIEW drums and bass
 .keyboard .top,
 .guitar,
-.stratocaster {
+.stratocaster,
+.bass {
     width: 100%;
     height: 55%;
     position: relative;
 }
 
     // top section of guitars
-        // REVIEW double check against bass strings
 .guitar .top,
-.stratocaster .top {
+.stratocaster .top,
+.bass .top {
     width: 100px;
     height: 200px;
     position: relative;
@@ -34,18 +39,64 @@
 
     .head {
         z-index: 10;
+        // NOTE EG +BG share:
+            // bottom: 73px;
+            // left: calc(50% - 35px);
+
+        // for the shape of the EG + BG head
+        .topShape, .bottomShape {
+            background: $guitarHead;
+        }
+        
+        .topShape {
+            width: 17px;
+            height: 17px;
+            border-radius: 50%;
+            position: absolute;
+            top: 1px;
+            left: 20px;
+        }
+
+        .bottomShape {
+            width: 70px;
+            height: 60px;
+            clip-path: $bottomShape;
+        }
     }
 
     .head, .tuningPegs, .tuningBars {
         position: absolute;
     }
 
+    .tuningPegs, .tuningBars {
+        height: auto;
+    }
+
+    // EG + BG share:
+        /* .tuningPegs {
+            bottom: 99px;
+            transform: translate(31px, 12px) rotate(-15deg);
+        } 
+        
+        .tuningBars {
+            width: 5px;
+            transform: rotate(-15deg);
+            bottom: 87px;
+            left: 56px;
+        }
+        
+        */
+
     .tuningPegs .tuningPeg {
         width: 3px;
         height: 3px;
         background: $silver;
+        
+        &:last-of-type {
+            margin: 0;
+        }
     }
-
+    
     .tuningBars .tuningBar {
         width: 100%;
         height: 1px;
@@ -62,11 +113,77 @@
         position: absolute;
         left: calc(50% - 9px);
         z-index: 20;
+        // NOTE EG + BG share:
+            // bottom: -77px;
+    }
+}
+
+    // stratocaster and bass
+.stratocaster .body,
+.bass .body {
+    width: 124px;
+    height: 124px;
+    clip-path: $stratocasterBody;
+    position: absolute;
+    bottom: -143px;
+    left: calc(50% - 62px);
+    z-index: 10;
+
+    .guard {
+        width: 100%;
+        height: 100%;
+    }
+
+    .pickups {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 20px;
+        position: absolute;
+        left: calc(50% - 10px);
+
+        .pickupBar {
+            height: 3px;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            border-radius: 50px;
+        }
+        
+        .pickup {
+            width: 2px;
+            height: 2px;
+            background: $silver;
+            border-radius: 50%;
+        }
+    }
+
+    .controls {
+        width: 25px;
+        position: absolute;
+
+        .knobs {
+            display: flex;
+            justify-content: space-around;
+
+            .knob {
+                width: 4px;
+                height: 4px;
+                border-radius: 50px;
+            }
+        }
+    }
+
+    .bridge {
+        width: 20px;
+        height: 12px;
+        background: $silver;
+        position: absolute;
+        left: calc(50% - 10px);
     }
 }
 
     // guitar strings
-        // REVIEW double check against bass strings
 .strings {
     width: 18px;
     height: 260px;
@@ -84,6 +201,9 @@
             background: $silver;
             border-radius: 50%;
             position: absolute;
+            // NOTE EG + BG share:
+                // width: 4px;
+                // height: 4px;
         }
     }
 }
@@ -91,6 +211,7 @@
 .flexString {
     display: flex;
     justify-content: space-between;
+    align-items: flex-end;
     width: 100%;
     height: auto;
 
@@ -103,12 +224,17 @@
             width: 1px;
             position: absolute;
             bottom: 0;
+            // NOTE EG + BG share:
+                // height: 3px;
+                // background: $recordingStudioFloor;
+                // border-radius: 2px;
+                // box-shadow: 0 0 1px $black;
+                // left: 0;
         }
     }
 }
 
     // guitar stand
-        // REVIEW double check against bass strings
 .guitarStand {
     position: relative;
     width: 100%;
@@ -130,8 +256,13 @@
         top: -25px;
     }
 
-    .bottomBrace .circle {
-        margin: 18px;
+
+    .bottomBrace {
+        bottom: -50px;
+
+        .circle {
+            margin: 18px;
+        }
     }
 
     .circle {
@@ -143,6 +274,10 @@
     }
     
     .stand {
+        width: 100%;
+        height: auto;
+        position: absolute;
+        bottom: -50px;
 
         .legs {
             width: 50px;
@@ -162,6 +297,78 @@
         .leg3 {
             transform: translate(20px, -5px) rotate(30deg);
         }
+    }
+}
+
+    // amp for electric and bass guitars
+.amp {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 75px;
+    background: $black;
+    border-radius: 10px;
+    position: absolute;
+    bottom: 30px;
+    left: 20px;
+
+    .controlPanel {
+        display: flex;
+        align-items: center;
+        width: 60px;
+        height: 10px;
+        border: 1px solid $white;
+
+        .panel {
+            height: 10px;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+
+            .ampKnob {
+                width: 3px;
+                height: 3px;
+                border-radius: 50%;
+                background: $silver;
+            }
+        }
+
+        .panel1, .panel2 {
+            width: 25%;
+
+            .input {
+                width: 2px;
+                height: 2px;
+                border-radius: 50%;
+                border: 1px solid $silver;
+            }
+        }
+        
+        .panel2 {
+            border-right: 1px solid $white;
+            border-left: 1px solid $white;
+        }
+
+        .panel3 {
+            width: calc(50% - 2px);
+
+            .headphoneInput {
+                width: 1px;
+                height: 1px;
+                border-radius: 50%;
+                background: $silver;
+            }
+        }
+    }
+
+    .speaker {
+        width: 60px;
+        height: 45px;
+        background: $silver;
+        background: $speaker;
+        border: 1px solid $silver;
     }
 }
 
@@ -345,7 +552,6 @@
         }
 
         .tuningBars {
-            height: auto;
             bottom: 100px;
             
             .tuningBar {
@@ -532,22 +738,7 @@
     }
 }
 
-.guitarStand {
-
-    .bottomBrace {
-        bottom: -55px;
-    }
-
-    .stand {
-        bottom: -55px;
-    }
-}
-
 // SECTION electric guitar
-.electricGuitar {
-    position: relative;
-}
-
 .stratocaster {
 
     .top {
@@ -555,29 +746,6 @@
         .head {
             bottom: 73px;
             left: calc(50% - 35px);
-
-            .topShape, .bottomShape {
-                background: $guitarHead;
-            }
-
-            .topShape {
-                width: 17px;
-                height: 17px;
-                border-radius: 50%;
-                position: absolute;
-                top: 1px;
-                left: 20px;
-            }
-
-            .bottomShape {
-                width: 70px;
-                height: 60px;
-                clip-path: $bottomShape;
-            }
-        }
-
-        .tuningPegs, .tuningBars {
-            height: auto;
         }
 
         .tuningPegs {
@@ -588,10 +756,6 @@
             
             .tuningPeg {
                 margin-bottom: 4px;
-
-                &:last-of-type {
-                    margin: 0;
-                }
             }
         }
 
@@ -612,60 +776,31 @@
     }
 
     .body {
-        width: 124px;
-        height: 124px;
-        clip-path: $stratocasterBody;
         background: $sunburstOrange;
         background: $sunburst;
-        position: absolute;
-        bottom: -143px;
-        left: calc(50% - 62px);
-        z-index: 10;
-
+        
         .guard {
-            width: 100%;
-            height: 100%;
             clip-path: $stratocasterPickGuard;
             background: $cream;
         }
 
         .pickups {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-around;
-            width: 20px;
             height: 50px;
-            position: absolute;
             bottom: 35px;
-            left: calc(50% - 10px);
 
             .pickupBar {
                 width: 100%;
-                height: 3px;
-                display: flex;
-                justify-content: space-evenly;
-                align-items: center;
                 background: $cream;
-                border-radius: 50px;
                 box-shadow: 0 0 1px $black;
 
                 &:last-of-type {
                     transform: rotate(-10deg);
                 }
-
-                .pickup {
-                    width: 2px;
-                    height: 2px;
-                    background: $silver;
-                    border-radius: 50%;
-                }
             }
         }
 
         .controls {
-            width: 25px;
             height: 25px;
-            position: absolute;
             bottom: 22px;
             left: 24px;
 
@@ -690,28 +825,18 @@
             }
 
             .knobs {
-                display: flex;
-                justify-content: space-around;
                 transform: rotate(-25deg);
 
                 .knob {
-                    width: 4px;
-                    height: 4px;
                     background: $cream;
-                    border-radius: 50px;
                     box-shadow: 0 0 1px $black;
                 }
             }
         }
 
         .bridge {
-            width: 20px;
-            height: 12px;
-            background: $silver;
             border-radius: 2px 2px 2px 0;
-            position: absolute;
             bottom: 23px;
-            left: calc(50% - 10px);
 
             .tremoloBar {
                 width: 5px;
@@ -807,13 +932,11 @@
         }
 
         .flexString {
-            align-items: flex-end;
 
             .string {
                 height: 218px;
 
                 .bottomNode {
-                    
                     height: 3px;
                     background: $recordingStudioFloor;
                     border-radius: 2px;
@@ -845,84 +968,160 @@
     }
 }
 
-.guitarStand {
-
-    .bottomBrace {
-        bottom: -50px;
-    }
-
-    .stand {
-        bottom: -50px; 
-    }
-}
-
-.amp {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 80px;
-    height: 75px;
-    background: $black;
-    border-radius: 10px;
-    position: absolute;
-    bottom: 30px;
-    left: 20px;
-
-    .controlPanel {
-        display: flex;
-        align-items: center;
-        width: 60px;
-        height: 10px;
-        border: 1px solid $white;
-
-        .panel {
-            height: 10px;
-            display: flex;
-            justify-content: space-evenly;
-            align-items: center;
-
-            .ampKnob {
-                width: 3px;
-                height: 3px;
-                border-radius: 50%;
-                background: $silver;
-            }
-        }
-
-        .panel1, .panel2 {
-            width: 25%;
-
-            .input {
-                width: 2px;
-                height: 2px;
-                border-radius: 50%;
-                border: 1px solid $silver;
-            }
-        }
+// SECTION bass guitar
+.bass {
+    
+    .top {
         
-        .panel2 {
-            border-right: 1px solid $white;
-            border-left: 1px solid $white;
+        .head {
+            bottom: 73px;
+            left: calc(50% - 35px);
         }
 
-        .panel3 {
-            width: calc(50% - 2px);
+        .tuningPegs {
+            width: 4px;
+            bottom: 99px;
+            left: 30px;
+            transform: translate(31px, 12px) rotate(-15deg);
 
-            .headphoneInput {
-                width: 1px;
-                height: 1px;
-                border-radius: 50%;
-                background: $silver;
+            .tuningPeg {
+                width: 4px;
+                height: 4px;
+                margin-bottom: 6px;
             }
+        }
+
+        .tuningBars {
+            width: 5px;
+            transform: rotate(-15deg);
+            bottom: 87px;
+            left: 56px;
+
+            .tuningBar {
+                margin-top: 9px;
+            }
+        }
+
+        .neck {
+            background: $guitarHead;
+            // frets
+            background: $fretboardBass;
+            bottom: -77px;
         }
     }
 
-    .speaker {
-        width: 60px;
-        height: 45px;
-        background: $silver;
-        background: $speaker;
-        border: 1px solid $silver;
+    .body {
+        background: $lakePlacidBlue;
+        
+        .guard {
+            clip-path: $bassPickGuard;
+            background: $almostBlack;
+        }
+
+        .pickups {
+            height: 25px;
+            bottom: 23px;
+            
+            .pickupBar {
+                width: 75%;
+                background: $almostBlack;
+                box-shadow: 0 0 1px $white;
+
+                &:nth-of-type(2) {
+                    align-self: flex-end;
+                }
+
+                &:last-of-type {
+                    width: 100%;
+                    margin-top: 10px;
+                    box-shadow: none;
+
+                    .pickup {
+                        width: 3px;
+                    }
+                }
+            }
+        }
+
+        .controls {
+            height: auto;
+            bottom: 14px;
+            left: 20px;
+
+            .knobs {
+                transform: rotate(50deg);
+
+                .knob {
+                    background: $silver;
+                    box-shadow: 0 0 1px $white;
+                }
+
+                .knob2 {
+                    margin-top: 2px;
+                }
+            }
+        }
+
+        .bridge {
+            border-radius: 2px;
+            bottom: 8px;
+        }
+    }
+
+    .strings {
+        bottom: -97px;
+
+        // inside .topNodes div
+        .topNode {
+            width: 4px;
+            height: 4px;
+        }
+
+        .topNode1 {
+            bottom: -2px;
+            left: 0;
+        }
+
+        .topNode2 {
+            bottom: -10px;
+            left: 5px;
+        }
+
+        .topNode3 {
+            bottom: -21px;
+            right: 4px;
+        }
+
+        .topNode4 {
+            bottom: -31px;
+            right: -2px;
+        }
+
+        .flexString {
+            
+            .string {
+                height: 234px;
+
+                .bottomNode {
+                    height: 3px;
+                    background: $recordingStudioFloor;
+                    border-radius: 2px;
+                    box-shadow: 0 0 1px $black;
+                    left: 0;
+                }
+            }
+
+            .string1 {
+                height: 263px;
+            }
+
+            .string2 {
+                height: 255px;
+            }
+
+            .string3 {
+                height: 243px;
+            }
+        }
     }
 }
