@@ -128,7 +128,6 @@ studioApp.instruments = {
             </div>
             <div class="speaker"></div>
         </div>
-        <div class="floor"></div>
         `,
         audio: "to come"
     },
@@ -275,7 +274,6 @@ studioApp.instruments = {
             </div>
             <div class="speaker"></div>
         </div>
-        <div class="floor"></div>
         `,
         audio: "to come"
     },
@@ -385,7 +383,6 @@ studioApp.instruments = {
                 </div>
             </div>
         </div>
-        <div class="floor"></div>
         `,
         audio: "to come"
     },
@@ -416,7 +413,6 @@ studioApp.instruments = {
                 <div class="feet foot3"></div>
                 <div class="feet foot4"></div>
             </div>
-            <div class="floor"></div>
         `,
         audio: "to come"
     },
@@ -501,7 +497,6 @@ studioApp.instruments = {
                     <div class="legs leg3"></div>
                 </div>
             </div>
-            <div class="floor"></div>
         `,
         audio: "to come"
     }
@@ -534,7 +529,6 @@ studioApp.instrumentPicker = function() {
     // listen for the user to click on of the instrument buttons
     $("button").on("click", function() {
         const $chosenInstrument = $(this).attr("id");
-        console.log("Chosen Instrument:", $chosenInstrument, typeof $chosenInstrument);
 
         // pass the instruments object as an argument
         // pass chosenInstrument as an argument
@@ -544,26 +538,40 @@ studioApp.instrumentPicker = function() {
 
 // resize instrument containers with window/viewport size
 studioApp.resizeInstruments = function() {
-    // store instrument containers, and their height and width properties, in variables
-    let $instrument = $(".instrument");
-    let $instrumentWidth = $instrument.outerWidth();
-    let $instrumentHeight = $instrument.outerHeight();
-
+    // store instrument containers in a variable
+    const $instrument = $(".instrument");
+    // store the current width of the instrument container in a variable
+    const $currentWidth = $instrument.width();
+    // store recording studio container in a variable
+    const $recordingStudio = $(".recordingStudio");
+    
     // listen for the window/viewport to change in size
-        // REVIEW does this take into account different screen sizes at the start?
+    // REVIEW does this take into account different screen sizes at the start?
     $(window).on("resize", function() {
+        // store the width of the window/veiweport in a variable
+        const $windowSize = $(this).width();
         // create a variable that will scale the width and height of the instrument containers in proportion to the change in the window/viewport size
         // the aspect ratio for each instrument container is 3 : 4
-        // as the width of the window/viewport decreases, the ratio should decrease accordingly
-            // 1.5 : 2      ---> 50%
-            // 1 : 1.33     ---> 33.33%
-            // 0.75 : 1     ---> 25%
-            // 0.6 : 0.8    ---> 20%
-        // each instrument needs to be 20% of the width
-            // at 1500px: 300px
-            // at 750px: 150px
-            // at 500px: 100px
+        const newWidth = $windowSize / 5;
+        const newHeight = (4 * newWidth) / 3;
+
+        // create a variable that will compare original width of the instrument container to the new width in order to determine the new scale for the instrument inside of the container
+        const scale = newWidth / $currentWidth;
+
+        // update the width and height properties of the instrument containers by passing them the newWidth and newHeight values respectively
+        $instrument.width(newWidth);
+        $instrument.height(newHeight);
+
+        console.log("New width:", $instrument.width(newWidth));
+        console.log("New height:", $instrument.height(newHeight));
+
+        // update the recording studio container's height to be the same as the instrument containers
+        $recordingStudio.height(newHeight);
+
+        // scale the instruments inside the containers to fit inside of the new dimensions
+        $instrument.css("transform", `scale(${scale})`);
     });
+
 }
 
 // initialize studioApp
