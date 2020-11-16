@@ -371,8 +371,8 @@ studioApp.instruments = {
             <div class="cymbalStand stand3">
                 <div class="stand"></div>
                 <div class="tripod tripod3">
-                        <div class="leg leg4">
-                    <div class="foot foot1"></div>
+                    <div class="leg leg4">
+                        <div class="foot foot1"></div>
                     </div>
                     <div class="leg leg5">
                         <div class="foot foot2"></div>
@@ -408,10 +408,14 @@ studioApp.instruments = {
             <div class="keyboardStand">
                 <div class="legs leg1"></div>
                 <div class="legs leg2"></div>
-                <div class="feet foot1"></div>
-                <div class="feet foot2"></div>
-                <div class="feet foot3"></div>
-                <div class="feet foot4"></div>
+                <div class="topFeet">
+                    <div class="feet foot1"></div>
+                    <div class="feet foot2"></div>
+                </div>
+                <div class="bottomFeet">
+                    <div class="feet foot3"></div>
+                    <div class="feet foot4"></div>
+                </div>
             </div>
         `,
         audio: "to come"
@@ -517,7 +521,6 @@ studioApp.addInstrument = function(object, instrument) {
     $instrumentContainer.toggleClass("hideInstrument");
 
     // display instrument to the page only if the instrument is not being hidden by the .hideInstrument class
-    // REVIEW .html, .append, .text?
     $(instrumentName).html(revealInstrument);
 
     // TODO add instrument audio
@@ -538,32 +541,32 @@ studioApp.instrumentPicker = function() {
 
 // resize instrument containers with window/viewport size
 studioApp.resizeInstruments = function() {
-    // store instrument containers in a variable
+    // store the instrument containers in a variable
     const $instrument = $(".instrument");
-    // store the current width of the instrument container in a variable
+    // store the current width of the html instruments container in a variable
     const $currentWidth = $instrument.width();
+
     // store recording studio container in a variable
     const $recordingStudio = $(".recordingStudio");
     
+    console.log($(".wrapper").width());
+
     // listen for the window/viewport to change in size
     // REVIEW does this take into account different screen sizes at the start?
+        // NOTE scale starts at 1 regardless of the starting screensize
+        // use this same information to determine the size that the instruments should start at depending on the size of the screen
     $(window).on("resize", function() {
-        // store the width of the window/veiweport in a variable
+        // store the width of the window/viewport in a variable
         const $windowSize = $(this).width();
+    
+        console.log({$windowSize});
         // create a variable that will scale the width and height of the instrument containers in proportion to the change in the window/viewport size
-        // the aspect ratio for each instrument container is 3 : 4
+            // the aspect ratio for each instrument container is 3 : 4
         const newWidth = $windowSize / 5;
         const newHeight = (4 * newWidth) / 3;
 
-        // create a variable that will compare original width of the instrument container to the new width in order to determine the new scale for the instrument inside of the container
+        // create a variable that will compare original width of the html instruments container to the new width in order to determine the new scale for the dynamically added instrument container inside of the html instruments container
         const scale = newWidth / $currentWidth;
-
-        // update the width and height properties of the instrument containers by passing them the newWidth and newHeight values respectively
-        $instrument.width(newWidth);
-        $instrument.height(newHeight);
-
-        console.log("New width:", $instrument.width(newWidth));
-        console.log("New height:", $instrument.height(newHeight));
 
         // update the recording studio container's height to be the same as the instrument containers
         $recordingStudio.height(newHeight);

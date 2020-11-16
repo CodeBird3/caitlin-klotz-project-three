@@ -256,6 +256,9 @@ html {
   display: flex;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   width: 100%;
   height: 400px;
   background: linear-gradient(to top, grey 60px, white 60px 70px, teal 70px);
@@ -622,7 +625,7 @@ html {
   border-radius: 10px;
   position: absolute;
   bottom: 30px;
-  left: 20px;
+  right: 70%;
 }
 
 .amp .controlPanel {
@@ -698,7 +701,7 @@ html {
   background: white;
   position: absolute;
   bottom: 30px;
-  left: 120px;
+  left: calc(50% - 30px);
 }
 
 .top .musicStand .horizontalBars, .top .musicStand .verticalBars {
@@ -755,7 +758,7 @@ html {
   height: 30px;
   position: absolute;
   bottom: 0;
-  left: 70px;
+  left: calc(50% - 80px);
 }
 
 .top .keys::before, .top .keys::after {
@@ -769,12 +772,12 @@ html {
 
 .top .keys::before {
   border-right: 10px solid black;
-  left: -10px;
+  left: -9px;
 }
 
 .top .keys::after {
   border-left: 10px solid black;
-  right: -10px;
+  right: -9px;
 }
 
 .keyboardStand .legs {
@@ -782,8 +785,8 @@ html {
   width: 200px;
   height: 10px;
   position: absolute;
-  top: 65px;
-  left: 50px;
+  top: 57%;
+  left: calc(50% - 100px);
 }
 
 .keyboardStand .leg1 {
@@ -796,28 +799,34 @@ html {
           transform: rotate(-135deg);
 }
 
+.keyboardStand .topFeet, .keyboardStand .bottomFeet {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 280px;
+  height: 30px;
+  position: absolute;
+  left: calc(50% - 140px);
+}
+
+.keyboardStand .topFeet {
+  top: -12px;
+}
+
+.keyboardStand .bottomFeet {
+  bottom: -39px;
+}
+
 .keyboardStand .feet {
   background: black;
   width: 15px;
   height: 15px;
   border-radius: 50%;
-  position: absolute;
-}
-
-.keyboardStand .foot1, .keyboardStand .foot2 {
-  top: -5px;
-}
-
-.keyboardStand .foot1, .keyboardStand .foot3 {
-  left: 75px;
-}
-
-.keyboardStand .foot2, .keyboardStand .foot4 {
-  left: 210px;
-}
-
-.keyboardStand .foot3, .keyboardStand .foot4 {
-  bottom: -24px;
 }
 
 .guitar .top .head {
@@ -1441,6 +1450,11 @@ html {
   height: 243px;
 }
 
+.drumKit {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+
 .drums {
   z-index: 10;
 }
@@ -1474,24 +1488,24 @@ html {
 }
 
 .drums .crashCymbal {
-  bottom: 10px;
   right: 55px;
+  bottom: 10px;
 }
 
 .drums .hiHat {
   width: 50px;
   height: 50px;
   position: absolute;
-  bottom: -20px;
   right: 7px;
+  bottom: -20px;
   z-index: 20;
 }
 
 .drums .hiHat .topHat::before,
 .drums .hiHat .bottomHat::before {
   border-radius: 10px 10px 0px 0px / 50px 50px 0px 0px;
-  border-left: 10px solid transparent;
   border-right: 10px solid transparent;
+  border-left: 10px solid transparent;
   bottom: 30px;
   left: 15px;
 }
@@ -1521,8 +1535,8 @@ html {
 .drums .middleTom {
   width: 55px;
   height: 55px;
-  bottom: -12px;
   right: 50%;
+  bottom: -12px;
   -webkit-box-shadow: 0 5px 0 silver, 0 10px 0 silver, 0 15px 0 silver, 0 20px 0 silver, 0 25px 0 silver, 0 30px 0 silver, 0 35px 0 silver, 0 40px 0 silver, 0 45px 0 silver, 0 50px 0 silver, 0 55px 0 silver, 0 60px 0 silver, 0 65px 0 silver, 0 70px 0 silver, 0 75px 0 silver, 0 80px 0 silver, 0 85px 0 #861819, 0 90px 0 #861819, 0 95px 0 #861819, 0 100px 0 #861819, 0 105px 0 #861819, 0 110px 0 #861819, 0 115px 0 #861819, 0 120px 0 #861819, 0 125px 0 #861819, 0 130px 0 #861819, 0 135px 0 #861819, 0 140px 0 #861819, 0 145px 0 #861819, 0 150px 0 #861819, 0 155px 0 #861819, 0 160px 0 #861819, 0 165px 0 #861819, 0 170px 0 #861819, 0 175px 0 #861819, 0 180px 0 #861819, 0 185px 0 #861819, 0 190px 0 #861819, 0 195px 0 #861819, 0 200px 0 #861819, 0 145px 0 #861819, 0 150px 0 #861819, 0 155px 0 #861819, 0 160px 0 #861819, 0 165px 0 #861819, 0 170px 0 #861819, 0 175px 0 #861819, 0 180px 0 #861819, 0 185px 0 #861819, 0 190px 0 #861819, 0 195px 0 #861819, 0 200px 0 #861819, 0 205px 0 #861819, 0 210px 0 #861819, 0 215px 0 #861819, 0 220px 0 #861819, 0 225px 0 #861819, 0 230px 0 #861819, 0 235px 0 #861819, 0 240px 0 #861819, 0 245px 0 #861819, 0 250px 0 #861819, 0 255px 0 #861819, 0 260px 0 #861819, 0 265px 0 #861819, 0 270px 0 #861819, 0 275px 0 #861819, 0 280px 0 #861819, 0 285px 0 #861819, 0 290px 0 #861819, 0 295px 0 #861819, 0 300px 0 #861819, 0 305px 0 #861819, 0 310px 0 #861819, 0 315px 0 #861819, 0 320px 0 #861819, 0 325px 0 #861819, 0 330px 0 #861819, 0 335px 0 #861819, 0 340px 0 #861819, 0 345px 0 #861819, 0 350px 0 #861819, 0 355px 0 #861819, 0 360px 0 #861819, 0 365px 0 #861819, 0 370px 0 #861819, 0 375px 0 #861819, 0 380px 0 #861819, 0 385px 0 #861819, 0 390px 0 #861819, 0 395px 0 #861819, 0 400px 0 #861819, 0 405px 0 #861819, 0 410px 0 #861819, 0 415px 0 #861819, 0 420px 0 #861819, 0 425px 0 #861819, 0 430px 0 #861819, 0 435px 0 #861819, 0 440px 0 #861819, 0 445px 0 #861819, 0 450px 0 #861819, 0 455px 0 #861819, 0 460px 0 #861819, 0 465px 0 #861819, 0 470px 0 #861819, 0 475px 0 #861819, 0 480px 0 #861819, 0 485px 0 #861819, 0 490px 0 #861819, 0 495px 0 #861819, 0 500px 0 #861819, 0 505px 0 #861819, 0 510px 0 #861819, 0 515px 0 #861819, 0 520px 0 #861819, 0 525px 0 #861819, 0 530px 0 #861819, 0 535px 0 #861819, 0 540px 0 #861819, 0 545px 0 #861819, 0 550px 0 #861819, 0 555px 0 #861819, 0 560px 0 #861819, 0 565px 0 #861819, 0 570px 0 #861819, 0 575px 0 #861819, 0 580px 0 #861819, 0 585px 0 #861819, 0 590px 0 #861819, 0 595px 0 #861819, 0 600px 0 #861819, 0 605px 0 #861819, 0 610px 0 #861819, 0 615px 0 #861819, 0 620px 0 #861819, 0 625px 0 #861819, 0 630px 0 #861819, 0 635px 0 #861819, 0 640px 0 #861819, 0 645px 0 #861819, 0 650px 0 #861819, 0 655px 0 #861819, 0 660px 0 #861819, 0 665px 0 #861819, 0 670px 0 #861819, 0 675px 0 #861819, 0 680px 0 #861819, 0 685px 0 #861819, 0 690px 0 #861819, 0 695px 0 #861819, 0 700px 0 #861819, 0 705px 0 #861819, 0 710px 0 #861819, 0 715px 0 #861819, 0 720px 0 #861819, 0 725px 0 #861819, 0 730px 0 #861819, 0 735px 0 #861819, 0 740px 0 #861819, 0 745px 0 #861819, 0 750px 0 #861819, 0 755px 0 #861819, 0 760px 0 #861819, 0 765px 0 #861819, 0 770px 0 #861819, 0 775px 0 #861819, 0 780px 0 #861819, 0 785px 0 #861819, 0 790px 0 #861819, 0 795px 0 #861819, 0 800px 0 #861819, 0 805px 0 #861819, 0 810px 0 #861819, 0 815px 0 #861819, 0 820px 0 #861819, 0 825px 0 #861819, 0 830px 0 #861819, 0 835px 0 #861819, 0 840px 0 #861819, 0 845px 0 #861819, 0 850px 0 #861819, 0 855px 0 #861819, 0 860px 0 #861819, 0 865px 0 #861819, 0 870px 0 #861819, 0 875px 0 #861819, 0 880px 0 #861819, 0 885px 0 #861819, 0 890px 0 #861819, 0 895px 0 #861819, 0 900px 0 #861819, 0 905px 0 #861819, 0 910px 0 #861819, 0 915px 0 silver, 0 920px 0 silver, 0 925px 0 silver, 0 930px 0 silver, 0 935px 0 silver, 0 940px 0 silver, 0 945px 0 silver, 0 950px 0 silver, 0 955px 0 silver, 0 960px 0 silver, 0 965px 0 silver, 0 970px 0 silver, 0 975px 0 silver, 0 980px 0 silver, 0 985px 0 silver, 0 990px 0 silver, 0 995px 0 silver, 0 1000px 0 silver;
           box-shadow: 0 5px 0 silver, 0 10px 0 silver, 0 15px 0 silver, 0 20px 0 silver, 0 25px 0 silver, 0 30px 0 silver, 0 35px 0 silver, 0 40px 0 silver, 0 45px 0 silver, 0 50px 0 silver, 0 55px 0 silver, 0 60px 0 silver, 0 65px 0 silver, 0 70px 0 silver, 0 75px 0 silver, 0 80px 0 silver, 0 85px 0 #861819, 0 90px 0 #861819, 0 95px 0 #861819, 0 100px 0 #861819, 0 105px 0 #861819, 0 110px 0 #861819, 0 115px 0 #861819, 0 120px 0 #861819, 0 125px 0 #861819, 0 130px 0 #861819, 0 135px 0 #861819, 0 140px 0 #861819, 0 145px 0 #861819, 0 150px 0 #861819, 0 155px 0 #861819, 0 160px 0 #861819, 0 165px 0 #861819, 0 170px 0 #861819, 0 175px 0 #861819, 0 180px 0 #861819, 0 185px 0 #861819, 0 190px 0 #861819, 0 195px 0 #861819, 0 200px 0 #861819, 0 145px 0 #861819, 0 150px 0 #861819, 0 155px 0 #861819, 0 160px 0 #861819, 0 165px 0 #861819, 0 170px 0 #861819, 0 175px 0 #861819, 0 180px 0 #861819, 0 185px 0 #861819, 0 190px 0 #861819, 0 195px 0 #861819, 0 200px 0 #861819, 0 205px 0 #861819, 0 210px 0 #861819, 0 215px 0 #861819, 0 220px 0 #861819, 0 225px 0 #861819, 0 230px 0 #861819, 0 235px 0 #861819, 0 240px 0 #861819, 0 245px 0 #861819, 0 250px 0 #861819, 0 255px 0 #861819, 0 260px 0 #861819, 0 265px 0 #861819, 0 270px 0 #861819, 0 275px 0 #861819, 0 280px 0 #861819, 0 285px 0 #861819, 0 290px 0 #861819, 0 295px 0 #861819, 0 300px 0 #861819, 0 305px 0 #861819, 0 310px 0 #861819, 0 315px 0 #861819, 0 320px 0 #861819, 0 325px 0 #861819, 0 330px 0 #861819, 0 335px 0 #861819, 0 340px 0 #861819, 0 345px 0 #861819, 0 350px 0 #861819, 0 355px 0 #861819, 0 360px 0 #861819, 0 365px 0 #861819, 0 370px 0 #861819, 0 375px 0 #861819, 0 380px 0 #861819, 0 385px 0 #861819, 0 390px 0 #861819, 0 395px 0 #861819, 0 400px 0 #861819, 0 405px 0 #861819, 0 410px 0 #861819, 0 415px 0 #861819, 0 420px 0 #861819, 0 425px 0 #861819, 0 430px 0 #861819, 0 435px 0 #861819, 0 440px 0 #861819, 0 445px 0 #861819, 0 450px 0 #861819, 0 455px 0 #861819, 0 460px 0 #861819, 0 465px 0 #861819, 0 470px 0 #861819, 0 475px 0 #861819, 0 480px 0 #861819, 0 485px 0 #861819, 0 490px 0 #861819, 0 495px 0 #861819, 0 500px 0 #861819, 0 505px 0 #861819, 0 510px 0 #861819, 0 515px 0 #861819, 0 520px 0 #861819, 0 525px 0 #861819, 0 530px 0 #861819, 0 535px 0 #861819, 0 540px 0 #861819, 0 545px 0 #861819, 0 550px 0 #861819, 0 555px 0 #861819, 0 560px 0 #861819, 0 565px 0 #861819, 0 570px 0 #861819, 0 575px 0 #861819, 0 580px 0 #861819, 0 585px 0 #861819, 0 590px 0 #861819, 0 595px 0 #861819, 0 600px 0 #861819, 0 605px 0 #861819, 0 610px 0 #861819, 0 615px 0 #861819, 0 620px 0 #861819, 0 625px 0 #861819, 0 630px 0 #861819, 0 635px 0 #861819, 0 640px 0 #861819, 0 645px 0 #861819, 0 650px 0 #861819, 0 655px 0 #861819, 0 660px 0 #861819, 0 665px 0 #861819, 0 670px 0 #861819, 0 675px 0 #861819, 0 680px 0 #861819, 0 685px 0 #861819, 0 690px 0 #861819, 0 695px 0 #861819, 0 700px 0 #861819, 0 705px 0 #861819, 0 710px 0 #861819, 0 715px 0 #861819, 0 720px 0 #861819, 0 725px 0 #861819, 0 730px 0 #861819, 0 735px 0 #861819, 0 740px 0 #861819, 0 745px 0 #861819, 0 750px 0 #861819, 0 755px 0 #861819, 0 760px 0 #861819, 0 765px 0 #861819, 0 770px 0 #861819, 0 775px 0 #861819, 0 780px 0 #861819, 0 785px 0 #861819, 0 790px 0 #861819, 0 795px 0 #861819, 0 800px 0 #861819, 0 805px 0 #861819, 0 810px 0 #861819, 0 815px 0 #861819, 0 820px 0 #861819, 0 825px 0 #861819, 0 830px 0 #861819, 0 835px 0 #861819, 0 840px 0 #861819, 0 845px 0 #861819, 0 850px 0 #861819, 0 855px 0 #861819, 0 860px 0 #861819, 0 865px 0 #861819, 0 870px 0 #861819, 0 875px 0 #861819, 0 880px 0 #861819, 0 885px 0 #861819, 0 890px 0 #861819, 0 895px 0 #861819, 0 900px 0 #861819, 0 905px 0 #861819, 0 910px 0 #861819, 0 915px 0 silver, 0 920px 0 silver, 0 925px 0 silver, 0 930px 0 silver, 0 935px 0 silver, 0 940px 0 silver, 0 945px 0 silver, 0 950px 0 silver, 0 955px 0 silver, 0 960px 0 silver, 0 965px 0 silver, 0 970px 0 silver, 0 975px 0 silver, 0 980px 0 silver, 0 985px 0 silver, 0 990px 0 silver, 0 995px 0 silver, 0 1000px 0 silver;
   -webkit-transform: rotateX(88deg) rotateY(5deg);
@@ -1576,13 +1590,13 @@ html {
   bottom: -47px;
 }
 
-.drumStand .cymbalStand {
+.drumKit .cymbalStand {
   width: 50px;
   height: auto;
   position: absolute;
 }
 
-.drumStand .cymbalStand .boom {
+.drumKit .cymbalStand .boom {
   width: 5px;
   height: 80px;
   background: silver;
@@ -1591,8 +1605,8 @@ html {
   left: calc(25px - 2px);
 }
 
-.drumStand .cymbalStand .boom1::before,
-.drumStand .cymbalStand .boom2::before {
+.drumKit .cymbalStand .boom1::before,
+.drumKit .cymbalStand .boom2::before {
   content: "";
   width: 0;
   height: 1px;
@@ -1601,35 +1615,35 @@ html {
   top: -2px;
 }
 
-.drumStand .cymbalStand .boom1 {
+.drumKit .cymbalStand .boom1 {
   -webkit-transform: rotate(20deg);
           transform: rotate(20deg);
 }
 
-.drumStand .cymbalStand .boom1::before {
-  border-left: 3px solid transparent;
+.drumKit .cymbalStand .boom1::before {
   border-right: 1px solid silver;
+  border-left: 3px solid transparent;
   right: 0;
 }
 
-.drumStand .cymbalStand .boom2 {
+.drumKit .cymbalStand .boom2 {
   -webkit-transform: rotate(-30deg);
           transform: rotate(-30deg);
 }
 
-.drumStand .cymbalStand .boom2::before {
+.drumKit .cymbalStand .boom2::before {
   border-right: 3px solid transparent;
   border-left: 1px solid silver;
 }
 
-.drumStand .cymbalStand .stand {
+.drumKit .cymbalStand .stand {
   width: 5px;
   height: 140px;
   background: silver;
   margin: 0 auto;
 }
 
-.drumStand .cymbalStand .tripod {
+.drumKit .cymbalStand .tripod {
   width: 100%;
   height: 75px;
   display: -webkit-box;
@@ -1642,81 +1656,81 @@ html {
   bottom: -35px;
 }
 
-.drumStand .cymbalStand .tripod .leg {
+.drumKit .cymbalStand .tripod .leg {
   width: 3px;
   height: 60px;
   background: silver;
 }
 
-.drumStand .cymbalStand .tripod .leg1 {
+.drumKit .cymbalStand .tripod .leg1 {
   -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
 }
 
-.drumStand .cymbalStand .tripod .leg2 {
+.drumKit .cymbalStand .tripod .leg2 {
   -webkit-transform: rotate(-10deg);
           transform: rotate(-10deg);
   margin-top: 9px;
   margin-left: 9px;
 }
 
-.drumStand .cymbalStand .tripod .leg3 {
+.drumKit .cymbalStand .tripod .leg3 {
   -webkit-transform: rotate(-50deg);
           transform: rotate(-50deg);
 }
 
-.drumStand .cymbalStand .tripod .leg4 {
+.drumKit .cymbalStand .tripod .leg4 {
   -webkit-transform: rotate(20deg);
           transform: rotate(20deg);
 }
 
-.drumStand .cymbalStand .tripod .leg5 {
+.drumKit .cymbalStand .tripod .leg5 {
   -webkit-transform: rotate(-5deg);
           transform: rotate(-5deg);
   margin-right: 9px;
   margin-left: 10px;
 }
 
-.drumStand .cymbalStand .tripod .leg6 {
+.drumKit .cymbalStand .tripod .leg6 {
   -webkit-transform: rotate(-20deg);
           transform: rotate(-20deg);
 }
 
-.drumStand .cymbalStand .tripod1 {
+.drumKit .cymbalStand .tripod1 {
   left: 0px;
 }
 
-.drumStand .cymbalStand .tripod2 {
+.drumKit .cymbalStand .tripod2 {
   bottom: -45px;
 }
 
-.drumStand .cymbalStand .tripod3 {
+.drumKit .cymbalStand .tripod3 {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   bottom: -30px;
 }
 
-.drumStand .stand1, .drumStand .stand2 {
+.drumKit .stand1, .drumKit .stand2 {
   z-index: 10;
 }
 
-.drumStand .stand1 {
+.drumKit .stand1 {
   top: 5px;
   left: 22px;
 }
 
-.drumStand .stand2 {
-  right: 46px;
+.drumKit .stand2 {
   top: -8px;
+  right: 46px;
 }
 
-.drumStand .stand3 {
+.drumKit .stand3 {
   right: 7px;
-  bottom: -5px;
+  bottom: -15px;
 }
 
-.drumStand .snareStand {
+.drumKit .snareStand {
   width: 50px;
   height: auto;
   position: absolute;
@@ -1724,7 +1738,7 @@ html {
   right: 55px;
 }
 
-.drumStand .snareStand .braces, .drumStand .snareStand .tripod {
+.drumKit .snareStand .braces, .drumKit .snareStand .tripod {
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1735,78 +1749,78 @@ html {
   position: absolute;
 }
 
-.drumStand .snareStand .braces {
+.drumKit .snareStand .braces {
   top: -20px;
 }
 
-.drumStand .snareStand .braces .brace {
+.drumKit .snareStand .braces .brace {
   width: 3px;
   height: 30px;
   background: silver;
 }
 
-.drumStand .snareStand .braces .brace1 {
+.drumKit .snareStand .braces .brace1 {
   -webkit-transform: rotate(-80deg);
           transform: rotate(-80deg);
   margin-top: 3px;
 }
 
-.drumStand .snareStand .braces .brace2 {
+.drumKit .snareStand .braces .brace2 {
   -webkit-transform: rotateX(50deg);
           transform: rotateX(50deg);
   margin-right: 7px;
   margin-left: 8px;
 }
 
-.drumStand .snareStand .braces .brace3 {
+.drumKit .snareStand .braces .brace3 {
   -webkit-transform: rotate(55deg);
           transform: rotate(55deg);
 }
 
-.drumStand .snareStand .stand {
+.drumKit .snareStand .stand {
   width: 5px;
   height: 70px;
   background: silver;
   margin: 0 auto;
 }
 
-.drumStand .snareStand .tripod {
+.drumKit .snareStand .tripod {
   height: 75px;
   bottom: -55px;
 }
 
-.drumStand .snareStand .tripod .leg {
+.drumKit .snareStand .tripod .leg {
   width: 3px;
   height: 40px;
   background: silver;
 }
 
-.drumStand .snareStand .tripod .leg7 {
+.drumKit .snareStand .tripod .leg7 {
   -webkit-transform: rotate(30deg);
           transform: rotate(30deg);
 }
 
-.drumStand .snareStand .tripod .leg8 {
+.drumKit .snareStand .tripod .leg8 {
   -webkit-transform: rotate(-5deg);
           transform: rotate(-5deg);
   margin-right: 9px;
   margin-left: 10px;
 }
 
-.drumStand .snareStand .tripod .leg9 {
+.drumKit .snareStand .tripod .leg9 {
   -webkit-transform: rotate(-30deg);
           transform: rotate(-30deg);
 }
 
-.drumStand .floorStand {
+.drumKit .floorStand {
   width: 25px;
   height: auto;
   position: absolute;
-  bottom: -40px;
+  bottom: -50px;
   left: 50px;
 }
 
-.drumStand .floorStand .leg {
+.drumKit .floorStand .leg {
   width: 3px;
   height: 30px;
   background: silver;
@@ -1814,7 +1828,7 @@ html {
           transform: rotate(25deg);
 }
 
-.drumStand .floorStand .leg::before {
+.drumKit .floorStand .leg::before {
   content: "";
   width: 3px;
   height: 90px;
@@ -1826,11 +1840,11 @@ html {
           transform: rotate(-25deg);
 }
 
-.drumStand .topStand {
+.drumKit .topStand {
   width: 30px;
   height: 40px;
   position: absolute;
-  top: -2px;
+  top: -7px;
   left: calc(50% - 15px);
   z-index: 10;
   display: -webkit-box;
@@ -1841,29 +1855,29 @@ html {
           justify-content: center;
 }
 
-.drumStand .topStand .stand, .drumStand .topStand .brace {
+.drumKit .topStand .stand, .drumKit .topStand .brace {
   background: silver;
 }
 
-.drumStand .topStand .stand {
+.drumKit .topStand .stand {
   width: 5px;
   height: 30px;
   margin: 0 1px;
 }
 
-.drumStand .topStand .centreStand {
+.drumKit .topStand .centreStand {
   -ms-flex-item-align: end;
       align-self: flex-end;
 }
 
-.drumStand .topStand .brace {
+.drumKit .topStand .brace {
   width: 19px;
   height: 10px;
   position: absolute;
   bottom: 20px;
 }
 
-.drumStand .bassStand {
+.drumKit .bassStand {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1876,19 +1890,19 @@ html {
   width: 100px;
   height: 50px;
   position: absolute;
-  bottom: -40px;
+  bottom: -50px;
   left: calc(50% - 50px);
   z-index: 10;
 }
 
-.drumStand .bassStand .leg {
+.drumKit .bassStand .leg {
   width: 3px;
   height: 40px;
   background: silver;
 }
 
-.drumStand .bassStand .leftLeg::before,
-.drumStand .bassStand .rightLeg::before {
+.drumKit .bassStand .leftLeg::before,
+.drumKit .bassStand .rightLeg::before {
   content: "";
   width: 0;
   height: 1px;
@@ -1896,32 +1910,32 @@ html {
   right: 0;
 }
 
-.drumStand .bassStand .leftLeg {
+.drumKit .bassStand .leftLeg {
   height: 27px;
   -webkit-transform: rotate(10deg);
           transform: rotate(10deg);
 }
 
-.drumStand .bassStand .leftLeg::before {
+.drumKit .bassStand .leftLeg::before {
   border-right: 2px solid transparent;
   border-bottom: 2px solid silver;
   border-left: 1px solid silver;
   top: -2px;
 }
 
-.drumStand .bassStand .rightLeg {
+.drumKit .bassStand .rightLeg {
   -webkit-transform: rotate(-10deg);
           transform: rotate(-10deg);
 }
 
-.drumStand .bassStand .rightLeg::before {
+.drumKit .bassStand .rightLeg::before {
   border-right: 1px solid silver;
   border-bottom: 3px solid silver;
   border-left: 2px solid transparent;
   top: -3px;
 }
 
-.drumStand .foot::before {
+.drumKit .foot::before {
   content: "";
   width: 0;
   height: 0;

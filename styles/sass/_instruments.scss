@@ -241,6 +241,7 @@
     width: 100%;
     height: 30%;
 }
+
     // guitar stand
 .guitarStand {
     
@@ -315,7 +316,7 @@
     border-radius: 10px;
     position: absolute;
     bottom: 30px;
-    left: 20px;
+    right: 70%;
 
     .controlPanel {
         display: flex;
@@ -378,14 +379,13 @@
 // SECTION keyboard
 .top {
 
-    // TODO try using flex for the bars in the stand instead of positioning?
     .musicStand {
         width: 60px;
         height: 30px;
         background: $white;
         position: absolute;
         bottom: 30px;
-        left: 120px;
+        left: calc(50% - 30px);
 
         .horizontalBars, .verticalBars {
             width: inherit;
@@ -429,7 +429,7 @@
         height: 30px;
         position: absolute;
         bottom: 0;
-        left: 70px;
+        left: calc(50% - 80px);
 
         &::before, &::after {
             content: "";
@@ -442,12 +442,12 @@
         
         &::before {
             border-right: 10px solid $black;
-            left: -10px;
+            left: -9px;
         }
 
         &::after {
             border-left: 10px solid $black;
-            right: -10px;
+            right: -9px;
         }
     }
 }
@@ -459,40 +459,41 @@
         width: 200px;
         height: 10px;
         position: absolute;
-        top: 65px;
-        left: 50px;
+        top: 57%;
+        left: calc(50% - 100px);
     }
-
+    
     .leg1 {
         transform: rotate(135deg);
     }
-
+    
     .leg2 {
         transform: rotate(-135deg);
     }
 
+    .topFeet, .bottomFeet {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 280px;
+        height: 30px;
+        position: absolute;
+        left: calc(50% - 140px);
+    }
+    
+    .topFeet {
+        top: -12px;
+    }
+
+    .bottomFeet {
+        bottom: -39px;
+    }
+    
     .feet {
         background: $black;
         width: 15px;
         height: 15px;
         border-radius: 50%;
-        position: absolute;
-    }
-
-    .foot1, .foot2 {
-        top: -5px;
-    }
-
-    .foot1, .foot3 {
-        left: 75px;
-    }
-
-    .foot2, .foot4 {
-        left: 210px;
-    }
-
-    .foot3, .foot4 {
-        bottom: -24px;
     }
 }
 
@@ -1104,6 +1105,10 @@
 }
 
 // SECTION drum kit
+.drumKit {
+    flex-shrink: 0;
+}
+
 .drums {
     z-index: 10;
 
@@ -1135,23 +1140,23 @@
     }
 
     .crashCymbal {
-        bottom: 10px;
         right: 55px;
+        bottom: 10px;
     }
 
     .hiHat {
         width: 50px;
         height: 50px;
         position: absolute;
-        bottom: -20px;
         right: 7px;
+        bottom: -20px;
         z-index: 20;
 
         .topHat::before,
         .bottomHat::before {
             border-radius: 10px 10px 0px 0px / 50px 50px 0px 0px;
-            border-left: 10px solid transparent;
             border-right: 10px solid transparent;
+            border-left: 10px solid transparent;
             bottom: 30px;
             left: 15px;
         }
@@ -1180,8 +1185,8 @@
     .middleTom {
         width: 55px;
         height: 55px;
-        bottom: -12px;
         right: 50%;
+        bottom: -12px;
         box-shadow: $topTomBoxShadow, $floorTomBoxShadow, $highTomBoxShadow, $middleTomBoxShadow;
         transform: rotateX(88deg) rotateY(5deg);
         z-index: 10;
@@ -1226,7 +1231,7 @@
     }
 }
 
-.drumStand {
+.drumKit {
 
     .cymbalStand {
         width: 50px;
@@ -1256,8 +1261,8 @@
             transform: rotate(20deg);
             
             &::before {
-                border-left: 3px solid transparent;
                 border-right: 1px solid $silver;
+                border-left: 3px solid transparent;
                 right: 0;
             }
         }
@@ -1338,19 +1343,22 @@
         z-index: 10;
     }
 
+    // ride cymbal stand
     .stand1 {
         top: 5px;
         left: 22px;
     }
 
+    // crash cymbal stand
     .stand2 {
-        right: 46px;
         top: -8px;
+        right: 46px;
     }
 
+    // hi hat cymbal stand
     .stand3 {
         right: 7px;
-        bottom: -5px;
+        bottom: -15px;
     }
 
     .snareStand {
@@ -1429,7 +1437,7 @@
         width: 25px;
         height: auto;
         position: absolute;
-        bottom: -40px;
+        bottom: -50px;
         left: 50px;
 
         .leg {
@@ -1455,7 +1463,7 @@
         width: 30px;
         height: 40px;
         position: absolute;
-        top: -2px;
+        top: -7px;
         left: calc(50% - 15px);
         z-index: 10;
         display: flex;
@@ -1490,7 +1498,7 @@
         width: 100px;
         height: 50px;
         position: absolute;
-        bottom: -40px;
+        bottom: -50px;
         left: calc(50% - 50px);
         z-index: 10;
 
