@@ -129,7 +129,7 @@ studioApp.instruments = {
             <div class="speaker"></div>
         </div>
         `,
-        audio: "to come"
+        audio: new Audio("bassGuitar.wav")
     },
     electricGuitar: {
         html: `
@@ -275,7 +275,7 @@ studioApp.instruments = {
             <div class="speaker"></div>
         </div>
         `,
-        audio: "to come"
+        audio: new Audio("electricGuitar.wav")
     },
     drumKit: {
         html: `
@@ -384,7 +384,7 @@ studioApp.instruments = {
             </div>
         </div>
         `,
-        audio: "to come"
+        audio: new Audio("drumKit.wav")
     },
     keyboard: {
         html: `
@@ -418,7 +418,7 @@ studioApp.instruments = {
                 </div>
             </div>
         `,
-        audio: "to come"
+        audio: new Audio("keyboard.wav")
     },
     acousticGuitar: {
         html: `
@@ -502,7 +502,7 @@ studioApp.instruments = {
                 </div>
             </div>
         `,
-        audio: "to come"
+        audio: new Audio("acousticGuitar.wav")
     }
 }
 
@@ -523,7 +523,10 @@ studioApp.addInstrument = function(object, instrument) {
     // display instrument to the page only if the instrument is not being hidden by the .hideInstrument class
     $(instrumentName).html(revealInstrument);
 
-    // TODO add instrument audio
+    // TODO figure out why there's no sound
+    // add instrument audio
+    const instrumentAudio = object[instrument].audio;
+    instrumentAudio.play();
 }
 
 

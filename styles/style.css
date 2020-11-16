@@ -370,6 +370,10 @@ footer a:hover, footer a:focus {
   text-shadow: 0 0 2px #562c2c;
 }
 
+.hideInstrument {
+  opacity: 0;
+}
+
 .bassGuitar,
 .electricGuitar,
 .drumKit,
@@ -633,6 +637,12 @@ footer a:hover, footer a:focus {
   width: 1px;
   background: #b08d57;
   position: relative;
+  -webkit-animation: headShake;
+          animation: headShake;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
 }
 
 .flexString .string .bottomNode {
@@ -810,6 +820,12 @@ footer a:hover, footer a:focus {
   position: absolute;
   bottom: 30px;
   left: calc(50% - 30px);
+  -webkit-animation: pulse;
+          animation: pulse;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
 }
 
 .top .musicStand .horizontalBars, .top .musicStand .verticalBars {
@@ -867,6 +883,12 @@ footer a:hover, footer a:focus {
   position: absolute;
   bottom: 0;
   left: calc(50% - 80px);
+  -webkit-animation: pulse;
+          animation: pulse;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
 }
 
 .top .keys::before, .top .keys::after {
@@ -1685,6 +1707,12 @@ footer a:hover, footer a:focus {
   left: calc(50% - 50px - 8px);
   -webkit-box-shadow: 1px 0 0 #861819, 2px 0 0 #861819, 3px 0 0 #861819, 4px 0 0 #861819, 5px 0 0 #861819, 6px 0 0 #861819, 7px 0 0 #861819, 8px 0 0 #861819, 9px 0 0 #861819, 10px 0 0 #861819, 11px 0 0 #861819, 12px 0 0 #861819, 13px 0 0 #861819, 14px 0 0 #861819, 15px 0 0 #861819, 16px 0 0 #861819;
           box-shadow: 1px 0 0 #861819, 2px 0 0 #861819, 3px 0 0 #861819, 4px 0 0 #861819, 5px 0 0 #861819, 6px 0 0 #861819, 7px 0 0 #861819, 8px 0 0 #861819, 9px 0 0 #861819, 10px 0 0 #861819, 11px 0 0 #861819, 12px 0 0 #861819, 13px 0 0 #861819, 14px 0 0 #861819, 15px 0 0 #861819, 16px 0 0 #861819;
+  -webkit-animation: heartBeat;
+          animation: heartBeat;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
 }
 
 .drums .snareDrum {
@@ -2053,10 +2081,6 @@ footer a:hover, footer a:focus {
   border-radius: 2px;
   position: absolute;
   bottom: -1px;
-}
-
-.hideInstrument {
-  opacity: 0;
 }
 
 @media (max-width: 1040px) {

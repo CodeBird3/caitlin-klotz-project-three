@@ -10,11 +10,7 @@
 @import 'instrumentVariables';
 @import 'instruments';
 
-// NEED FOR DISPLAYING INSTRUMENTS: .hideInstrument
-.hideInstrument {
-    // TEST
-    opacity: 0;
-}
 
-// import media queries
+// import media queries and keyframes
 @import 'mediaQueries';
+@import 'keyframes';

@@ -1,5 +1,11 @@
 // stylesheet for each of the instruments that will appear in the .recordingStudio container
 
+// when the instruments are hidden
+.hideInstrument {
+    // TEST
+    opacity: 0;
+}
+
 // SECTION all instruments
     // background
 .bassGuitar,
@@ -221,6 +227,11 @@
         background: $bronze;
         position: relative;
 
+        // animate strings
+        animation: headShake;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+
         .bottomNode {
             width: 1px;
             position: absolute;
@@ -389,6 +400,11 @@
         bottom: 30px;
         left: calc(50% - 30px);
 
+        // animate music stand
+        animation: pulse;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+
         .horizontalBars, .verticalBars {
             width: inherit;
             height: inherit;
@@ -432,6 +448,11 @@
         position: absolute;
         bottom: 0;
         left: calc(50% - 80px);
+
+        // animate keys
+        animation: pulse;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
 
         &::before, &::after {
             content: "";
@@ -1140,11 +1161,17 @@
     .rideCymbal {
         bottom: 0;
         left: 11%;
+
+        // TODO animate ride cymbal
+            // REVIEW how to animate an object that has a transformation on it
     }
 
     .crashCymbal {
         bottom: 10px;
         left: 58%;
+
+        // TODO animate crash cymbal
+            // REVIEW how to animate an object that has a transformation on it
     }
 
     .hiHat {
@@ -1222,6 +1249,11 @@
         bottom: -140px;
         left: calc(50% - 50px - 8px);
         box-shadow: $bassDrumBoxShadow;
+
+        // animate bass drum
+        animation: heartBeat;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
     }
 
     .snareDrum {
