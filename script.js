@@ -553,18 +553,14 @@ studioApp.initialInstrumentSize = function() {
     // store the default width of the instrument containers
     const $instrument = $(".instrument");
     const defaultWidth = 300;
-    console.log(defaultWidth);
 
 
     // the initial width of the instrument containers should be 20% of the width of the recording studio container and the height should keep the aspect ratio of 3 : 4
     const $initialWidth = $initialStudioSize / 5;
     const $initialHeight = (4 * $initialWidth) / 3;
 
-    console.log(`Initial width: ${$initialWidth}, Initial height: ${$initialHeight}`);
-
     // scale the size of the instrument containers by comparing the default width to the initial width
     const scale = $initialWidth / defaultWidth;
-    console.log(`Starting scale: ${scale}`);
 
     // update the recording studio container's height to be the same as the instrument containers
     $recordingStudio.height($initialHeight);
@@ -593,12 +589,8 @@ studioApp.resizeInstruments = function() {
         const newWidth = $studioSize / 5;
         const newHeight = (4 * newWidth) / 3;
 
-        console.log(`New width: ${newWidth}, New height: ${newHeight}`);
-
         // create a variable that will compare original width of the instrument containers to the new width
         const scale = newWidth / currentWidth;
-
-        console.log(`New scale: ${scale}`);
 
         // update the recording studio container's height to be the same as the instrument containers
             $recordingStudio.height(newHeight);
