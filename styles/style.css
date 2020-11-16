@@ -246,22 +246,128 @@ html {
 
 .wrapper {
   width: 85%;
-  max-width: 1400px;
+  max-width: 1500px;
   margin: 0 auto;
 }
 
-.recordingStudio {
+header {
+  background: #c7eae4;
+  text-align: center;
+  padding: 50px 0;
+  height: 30vh;
+  border-bottom: 3px double #562c2c;
+}
+
+header h1 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 6rem;
+  color: #562c2c;
+  margin: 0 15px;
+  padding-bottom: 30px;
+}
+
+header h2 {
+  display: inline-block;
+  font-family: 'Indie Flower', cursive;
+  font-size: 2.5rem;
+  color: #192a51;
+  background: white;
+  padding: 10px 30px;
+  margin: 10px 15px;
+  border-radius: 5px;
+}
+
+.instrumentChoices {
+  text-align: center;
+}
+
+.instrumentChoices h3 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 2rem;
+  color: #562c2c;
+  padding: 20px 0;
+  margin-top: 20px;
+}
+
+.instrumentChoices .buttons {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding: 20px 0 0;
+}
+
+.instrumentChoices .buttons button {
+  font-family: 'Indie Flower', cursive;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #192a51;
+  background: #c7eae4;
+  border: 2px solid #192a51;
+  border-radius: 5px;
+  padding: 15px 30px;
+  margin: 5px;
+}
+
+.instrumentChoices .buttons button:hover, .instrumentChoices .buttons button:focus {
+  background: #192a51;
+  color: #c7eae4;
+}
+
+.instrumentChoices .buttons button:active {
+  background: #562c2c;
+}
+
+.studioContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 100%;
+  height: 480px;
+}
+
+.studioContainer .recordingStudio {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   height: 400px;
-  background: linear-gradient(to top, grey 60px, white 60px 70px, teal 70px);
+  margin: auto;
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(15%, grey), color-stop(15%, white), color-stop(20%, teal));
+  background: linear-gradient(to top, grey 15%, white 15% 20%, teal 20%);
+}
+
+footer {
+  background: #c7eae4;
+  padding: 10px;
+  text-align: center;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.6rem;
+  color: #562c2c;
+  border-top: 3px double #562c2c;
+}
+
+footer a {
+  text-decoration: none;
+  color: inherit;
+}
+
+footer a:hover, footer a:focus {
+  color: white;
+  text-shadow: 0 0 2px #562c2c;
 }
 
 .bassGuitar,
@@ -271,6 +377,8 @@ html {
 .acousticGuitar {
   width: 300px;
   height: 400px;
+  -ms-flex-negative: 2;
+      flex-shrink: 2;
 }
 
 .bassGuitar, .electricGuitar {
@@ -290,7 +398,7 @@ html {
 .guitar .top,
 .stratocaster .top,
 .bass .top {
-  width: 100px;
+  width: 50px;
   height: 200px;
   position: relative;
   margin: 0 auto;
@@ -840,8 +948,8 @@ html {
 }
 
 .guitar .top .tuningPegs, .guitar .top .tuningBars {
-  width: calc(100%/3);
-  left: calc(100%/3);
+  width: 34px;
+  left: calc(50% - 17px);
 }
 
 .guitar .top .tuningPegs {
@@ -1067,7 +1175,7 @@ html {
 .stratocaster .top .tuningPegs {
   width: 3px;
   bottom: 99px;
-  left: 29px;
+  left: 4px;
   -webkit-transform: translate(31px, 12px) rotate(-15deg);
           transform: translate(31px, 12px) rotate(-15deg);
 }
@@ -1081,7 +1189,7 @@ html {
   -webkit-transform: rotate(-15deg);
           transform: rotate(-15deg);
   bottom: 87px;
-  left: 56px;
+  left: 31px;
 }
 
 .stratocaster .top .tuningBars .tuningBar {
@@ -1302,7 +1410,7 @@ html {
 .bass .top .tuningPegs {
   width: 4px;
   bottom: 99px;
-  left: 30px;
+  left: 6px;
   -webkit-transform: translate(31px, 12px) rotate(-15deg);
           transform: translate(31px, 12px) rotate(-15deg);
 }
@@ -1318,7 +1426,7 @@ html {
   -webkit-transform: rotate(-15deg);
           transform: rotate(-15deg);
   bottom: 87px;
-  left: 56px;
+  left: 31px;
 }
 
 .bass .top .tuningBars .tuningBar {
@@ -1451,8 +1559,8 @@ html {
 }
 
 .drumKit {
-  -ms-flex-negative: 0;
-      flex-shrink: 0;
+  -ms-flex-negative: 1;
+      flex-shrink: 1;
 }
 
 .drums {
@@ -1484,20 +1592,20 @@ html {
 
 .drums .rideCymbal {
   bottom: 0;
-  left: 30px;
+  left: 11%;
 }
 
 .drums .crashCymbal {
-  right: 55px;
   bottom: 10px;
+  left: 58%;
 }
 
 .drums .hiHat {
   width: 50px;
   height: 50px;
   position: absolute;
-  right: 7px;
   bottom: -20px;
+  left: 81%;
   z-index: 20;
 }
 
@@ -1562,7 +1670,7 @@ html {
   -webkit-transform: rotateX(80deg) rotateY(5deg);
           transform: rotateX(80deg) rotateY(5deg);
   bottom: -47px;
-  left: 60px;
+  left: 20%;
 }
 
 .drums .bassDrum {
@@ -1586,8 +1694,8 @@ html {
           box-shadow: 0 5px 0 silver, 0 10px 0 silver, 0 15px 0 silver, 0 20px 0 silver, 0 25px 0 #861819, 0 30px 0 #861819, 0 35px 0 #861819, 0 40px 0 #861819, 0 45px 0 #861819, 0 50px 0 #861819, 0 55px 0 #861819, 0 60px 0 #861819, 0 65px 0 #861819, 0 70px 0 #861819, 0 75px 0 #861819, 0 80px 0 #861819, 0 85px 0 #861819, 0 90px 0 #861819, 0 95px 0 #861819, 0 100px 0 #861819, 0 105px 0 silver, 0 110px 0 silver, 0 115px 0 silver, 0 120px 0 silver;
   -webkit-transform: rotateX(80deg) rotateY(-10deg);
           transform: rotateX(80deg) rotateY(-10deg);
-  right: 50px;
   bottom: -47px;
+  left: 63%;
 }
 
 .drumKit .cymbalStand {
@@ -1717,17 +1825,17 @@ html {
 
 .drumKit .stand1 {
   top: 5px;
-  left: 22px;
+  left: 7%;
 }
 
 .drumKit .stand2 {
   top: -8px;
-  right: 46px;
+  left: 68%;
 }
 
 .drumKit .stand3 {
-  right: 7px;
-  bottom: -15px;
+  bottom: -5px;
+  left: 81%;
 }
 
 .drumKit .snareStand {
@@ -1735,7 +1843,7 @@ html {
   height: auto;
   position: absolute;
   top: 47px;
-  right: 55px;
+  left: 65%;
 }
 
 .drumKit .snareStand .braces, .drumKit .snareStand .tripod {
@@ -1817,7 +1925,7 @@ html {
   height: auto;
   position: absolute;
   bottom: -50px;
-  left: 50px;
+  left: 17%;
 }
 
 .drumKit .floorStand .leg {
@@ -1890,7 +1998,7 @@ html {
   width: 100px;
   height: 50px;
   position: absolute;
-  bottom: -50px;
+  bottom: -41px;
   left: calc(50% - 50px);
   z-index: 10;
 }
@@ -1949,4 +2057,71 @@ html {
 
 .hideInstrument {
   opacity: 0;
+}
+
+@media (max-width: 1040px) {
+  header h1 {
+    font-size: 4rem;
+  }
+  header h2 {
+    font-size: 2rem;
+  }
+  .instrumentChoices .buttons button {
+    font-size: 1.6rem;
+    padding: 10px 15px;
+  }
+  .studioContainer {
+    height: 350px;
+  }
+}
+
+@media (max-width: 744px) {
+  .instrumentChoices .buttons {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .instrumentChoices .buttons button {
+    width: 200px;
+  }
+}
+
+@media (max-width: 584px) {
+  header h1 {
+    font-size: 3rem;
+  }
+  header h2 {
+    font-size: 1.8rem;
+  }
+  .studioContainer {
+    height: 300px;
+  }
+}
+
+@media (max-width: 446px) {
+  header h1 {
+    font-size: 2rem;
+  }
+  header h2 {
+    margin: 10px 40px;
+    border: 1px solid #562c2c;
+  }
+  .studioContainer {
+    height: 200px;
+  }
+}
+
+@media (hover: none) {
+  .instrumentChoices .buttons button:hover {
+    background: none;
+    color: inherit;
+  }
+  footer a:hover {
+    color: inherit;
+    text-shadow: none;
+  }
 }

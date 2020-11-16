@@ -13,11 +13,17 @@ html {
 
 .wrapper {
     width: 85%;
-    max-width: 1400px;
+    // TODO switch back to 1400px
+    max-width: 1500px;
     margin: 0 auto;
 }
 
-// COLOUR VARIABLES
+// PAGE COLOUR VARIABLES
+$lightCyan: #c7eae4;
+$caputMortuum: #562c2c;
+$spaceCadet: #192a51;
+
+//  INSTRUMENT COLOUR VARIABLES
 $recordingStudioBackground: teal;
     // also used for jack input inset and string bottom nodes
     // amp speaker gradient

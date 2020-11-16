@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- stylesheets -->
+    <!-- Google Fonts stylesheets -->
+    <!-- NOTE this is new... -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Space+Grotesk:wght@600&display=swap" rel="stylesheet">
     <!-- external stylesheet -->
     <link rel="stylesheet" href="./styles/style.css">
 
@@ -19,20 +23,24 @@
     <main>
         <section class="instrumentChoices wrapper">
             <h3>Choose which instruments you want in your recording studio!</h3>
-            <button id="keyboard">Keyboard</button>
-            <button id="acousticGuitar">Acoustic Guitar</button>
-            <button id="electricGuitar">Electric Guitar</button>
-            <button id="bassGuitar">Bass Guitar</button>
-            <button id="drumKit">Drum Kit</button>
+            <div class="buttons">
+                <button id="keyboard">Keyboard</button>
+                <button id="acousticGuitar">Acoustic Guitar</button>
+                <button id="electricGuitar">Electric Guitar</button>
+                <button id="bassGuitar">Bass Guitar</button>
+                <button id="drumKit">Drum Kit</button>
+            </div>
         </section>
-        <section class="recordingStudio">
-            <!-- container for selected instruments -->
-            <div class="bassGuitar instrument hideInstrument"></div>
-            <div class="electricGuitar instrument hideInstrument"></div>
-            <div class="drumKit instrument hideInstrument"></div>
-            <div class="keyboard instrument hideInstrument"></div>
-            <div class="acousticGuitar instrument hideInstrument"></div>
-        </section>
+        <div class="studioContainer">
+            <section class="recordingStudio wrapper">
+                <!-- container for selected instruments -->
+                <div class="bassGuitar instrument hideInstrument"></div>
+                <div class="electricGuitar instrument hideInstrument"></div>
+                <div class="drumKit instrument hideInstrument"></div>
+                <div class="keyboard instrument hideInstrument"></div>
+                <div class="acousticGuitar instrument hideInstrument"></div>
+            </section>
+        </div>
     </main>
 
     <footer>Created at <a href="https://junocollege.com">Juno College</a></footer>

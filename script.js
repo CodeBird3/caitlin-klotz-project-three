@@ -539,40 +539,70 @@ studioApp.instrumentPicker = function() {
     });
 }
 
-// resize instrument containers with window/viewport size
+// method that allows the instruments to start at a width of 20% of the recording studio container width instead of the default 300px
+    // this will also allow for the instruments to scale properly in the resizeInstruments method so that the instruments will not break out of the recording studio container
+studioApp.initialInstrumentSize = function() {
+    // store the recording studio container in a variable
+    const $recordingStudio = $(".recordingStudio");
+    // store the size of the window/viewport when the page is first loaded
+    const $initialStudioSize = $recordingStudio.width();
+
+    // store the default width of the instrument containers
+    const $instrument = $(".instrument");
+    const defaultWidth = 300;
+    console.log(defaultWidth);
+
+
+    // the initial width of the instrument containers should be 20% of the width of the recording studio container and the height should keep the aspect ratio of 3 : 4
+    const $initialWidth = $initialStudioSize / 5;
+    const $initialHeight = (4 * $initialWidth) / 3;
+
+    console.log(`Initial width: ${$initialWidth}, Initial height: ${$initialHeight}`);
+
+    // scale the size of the instrument containers by comparing the default width to the initial width
+    const scale = $initialWidth / defaultWidth;
+    console.log(`Starting scale: ${scale}`);
+
+    // update the recording studio container's height to be the same as the instrument containers
+    $recordingStudio.height($initialHeight);
+
+    // scale the instruments inside the containers to fit inside of the new dimensions
+    $instrument.css("transform", `scale(${scale})`);
+}
+
+// resize instrument containers with recording studio container's size
 studioApp.resizeInstruments = function() {
     // store the instrument containers in a variable
     const $instrument = $(".instrument");
-    // store the current width of the html instruments container in a variable
-    const $currentWidth = $instrument.width();
+    // store the default width of the instrument containers in a variable
+    const currentWidth = 300;
 
     // store recording studio container in a variable
     const $recordingStudio = $(".recordingStudio");
-    
-    console.log($(".wrapper").width());
 
     // listen for the window/viewport to change in size
-    // REVIEW does this take into account different screen sizes at the start?
-        // NOTE scale starts at 1 regardless of the starting screensize
-        // use this same information to determine the size that the instruments should start at depending on the size of the screen
     $(window).on("resize", function() {
-        // store the width of the window/viewport in a variable
-        const $windowSize = $(this).width();
+        // store the width of the recording studio container in a variable
+        const $studioSize = $recordingStudio.width();
     
-        console.log({$windowSize});
-        // create a variable that will scale the width and height of the instrument containers in proportion to the change in the window/viewport size
+        // create variables to store the aspect ratio that will scale the width and height of the instrument containers in proportion to the change in the recording studio container's size
             // the aspect ratio for each instrument container is 3 : 4
-        const newWidth = $windowSize / 5;
+        const newWidth = $studioSize / 5;
         const newHeight = (4 * newWidth) / 3;
 
-        // create a variable that will compare original width of the html instruments container to the new width in order to determine the new scale for the dynamically added instrument container inside of the html instruments container
-        const scale = newWidth / $currentWidth;
+        console.log(`New width: ${newWidth}, New height: ${newHeight}`);
+
+        // create a variable that will compare original width of the instrument containers to the new width
+        const scale = newWidth / currentWidth;
+
+        console.log(`New scale: ${scale}`);
 
         // update the recording studio container's height to be the same as the instrument containers
-        $recordingStudio.height(newHeight);
+            $recordingStudio.height(newHeight);
 
         // scale the instruments inside the containers to fit inside of the new dimensions
         $instrument.css("transform", `scale(${scale})`);
+        
     });
 
 }
@@ -580,6 +610,7 @@ studioApp.resizeInstruments = function() {
 // initialize studioApp
 studioApp.init = function() {
     studioApp.instrumentPicker();
+    studioApp.initialInstrumentSize();
     studioApp.resizeInstruments();
 }
 

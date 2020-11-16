@@ -9,6 +9,8 @@
 .acousticGuitar {
     width: 300px;
     height: 400px;
+    // flex-basis: content;
+    flex-shrink: 2;
 }
 
 .bassGuitar, .electricGuitar {
@@ -30,7 +32,7 @@
 .guitar .top,
 .stratocaster .top,
 .bass .top {
-    width: 100px;
+    width: 50px;
     height: 200px;
     position: relative;
     margin: 0 auto;
@@ -512,8 +514,8 @@
         }
 
         .tuningPegs, .tuningBars {
-            width: calc(100%/3);
-            left: calc(100%/3);
+            width: 34px;
+            left: calc(50% - 17px);
         }
 
         .tuningPegs {
@@ -729,7 +731,7 @@
         .tuningPegs {
             width: 3px;
             bottom: 99px;
-            left: 29px;
+            left: 4px;
             transform: translate(31px, 12px) rotate(-15deg);
             
             .tuningPeg {
@@ -741,7 +743,7 @@
             width: 5px;
             transform: rotate(-15deg);
             bottom: 87px;
-            left: 56px;
+            left: 31px;
 
             .tuningBar {
                 margin-top: 6px;
@@ -959,7 +961,7 @@
         .tuningPegs {
             width: 4px;
             bottom: 99px;
-            left: 30px;
+            left: 6px;
             transform: translate(31px, 12px) rotate(-15deg);
 
             .tuningPeg {
@@ -973,7 +975,7 @@
             width: 5px;
             transform: rotate(-15deg);
             bottom: 87px;
-            left: 56px;
+            left: 31px;
 
             .tuningBar {
                 margin-top: 9px;
@@ -1106,7 +1108,8 @@
 
 // SECTION drum kit
 .drumKit {
-    flex-shrink: 0;
+    flex-shrink: 1;
+    // flex-basis: auto;
 }
 
 .drums {
@@ -1136,20 +1139,20 @@
 
     .rideCymbal {
         bottom: 0;
-        left: 30px;
+        left: 11%;
     }
 
     .crashCymbal {
-        right: 55px;
         bottom: 10px;
+        left: 58%;
     }
 
     .hiHat {
         width: 50px;
         height: 50px;
         position: absolute;
-        right: 7px;
         bottom: -20px;
+        left: 81%;
         z-index: 20;
 
         .topHat::before,
@@ -1206,7 +1209,7 @@
         box-shadow: $snareBoxShadow, $floorTomBoxShadow, $floorTomRim;
         transform: rotateX(80deg) rotateY(5deg);
         bottom: -47px;
-        left: 60px;
+        left: 20%;
     }
 
     .bassDrum {
@@ -1226,8 +1229,8 @@
         height: 60px;
         box-shadow: $snareBoxShadow, $snareRim;
         transform: rotateX(80deg) rotateY(-10deg);
-        right: 50px;
         bottom: -47px;
+        left: 63%;
     }
 }
 
@@ -1346,19 +1349,19 @@
     // ride cymbal stand
     .stand1 {
         top: 5px;
-        left: 22px;
+        left: 7%;
     }
 
     // crash cymbal stand
     .stand2 {
         top: -8px;
-        right: 46px;
+        left: 68%;
     }
 
     // hi hat cymbal stand
     .stand3 {
-        right: 7px;
-        bottom: -15px;
+        bottom: -5px;
+        left: 81%;
     }
 
     .snareStand {
@@ -1366,7 +1369,7 @@
         height: auto;
         position: absolute;
         top: 47px;
-        right: 55px;
+        left: 65%;
 
         .braces, .tripod {
             width: 100%;
@@ -1438,7 +1441,7 @@
         height: auto;
         position: absolute;
         bottom: -50px;
-        left: 50px;
+        left: 17%;
 
         .leg {
             width: 3px;
@@ -1498,7 +1501,7 @@
         width: 100px;
         height: 50px;
         position: absolute;
-        bottom: -50px;
+        bottom: -41px;
         left: calc(50% - 50px);
         z-index: 10;
 

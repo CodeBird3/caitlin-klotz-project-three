@@ -9,11 +9,12 @@
 // import CSS instruments
 @import 'instrumentVariables';
 @import 'instruments';
-// TODO make sure the images don't break once loaded
-// TODO reposition instruments pieces after completing background
 
 // NEED FOR DISPLAYING INSTRUMENTS: .hideInstrument
 .hideInstrument {
     // TEST
     opacity: 0;
 }
+
+// import media queries
+@import 'mediaQueries';
