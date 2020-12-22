@@ -235,6 +235,10 @@ html {
   overflow: hidden;
 }
 
+audio:not([controls]) {
+  display: inline-block;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -2136,16 +2140,5 @@ footer a:hover, footer a:focus {
   }
   .studioContainer {
     height: 200px;
-  }
-}
-
-@media (hover: none) {
-  .instrumentChoices .buttons button:hover {
-    background: none;
-    color: inherit;
-  }
-  footer a:hover {
-    color: inherit;
-    text-shadow: none;
   }
 }
