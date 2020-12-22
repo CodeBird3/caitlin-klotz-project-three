@@ -15,6 +15,12 @@ studioApp.instruments = {
     // NOTE these are not necessarily objects
     bassGuitar: {
         html: `
+        <audio
+            id="bassGuitarAudio"
+            src="./assets/bassGuitar.wav"
+            type="audio/wav"
+            loop
+        ></audio>
         <div class="bass">
             <div class="top">
                 <div class="head">
@@ -131,6 +137,12 @@ studioApp.instruments = {
     },
     electricGuitar: {
         html: `
+        <audio
+            id="electricGuitarAudio"
+            src="./assets/electricGuitar.wav"
+            type="audio/wav"
+            loop
+        ></audio>
         <div class="stratocaster">
             <div class="top">
                 <div class="head">
@@ -276,6 +288,12 @@ studioApp.instruments = {
     },
     drumKit: {
         html: `
+        <audio
+            id="drumKitAudio"
+            src="./assets/drumKit.wav"
+            type="audio/wav"
+            loop
+        ></audio>
         <div class="drums">
             <div class="cymbal rideCymbal"></div>
             <div class="drum middleTom"></div>
@@ -384,118 +402,130 @@ studioApp.instruments = {
     },
     keyboard: {
         html: `
-            <div class="top">
-                <div class="musicStand">
-                    <div class="horizontalBars">
-                        <div class="horizontalBar bar1"></div>
-                        <div class="horizontalBar bar2"></div>
-                        <div class="horizontalBar bar3"></div>
-                    </div>
-                    <div class="verticalBars">
-                        <div class="verticalBar bar4"></div>
-                        <div class="verticalBar bar5"></div>
-                        <div class="verticalBar bar6"></div>
-                        <div class="verticalBar bar7"></div>
-                        <div class="verticalBar bar8"></div>
-                    </div>
+        <audio 
+            id="keyboardAudio"
+            src="./assets/keyboard.wav"
+            type="audio/wav"
+            loop
+        ></audio>
+        <div class="top">
+            <div class="musicStand">
+                <div class="horizontalBars">
+                    <div class="horizontalBar bar1"></div>
+                    <div class="horizontalBar bar2"></div>
+                    <div class="horizontalBar bar3"></div>
                 </div>
-                <div class="keys"></div>
-            </div>
-            <div class="keyboardStand">
-                <div class="legs leg1"></div>
-                <div class="legs leg2"></div>
-                <div class="topFeet">
-                    <div class="feet foot1"></div>
-                    <div class="feet foot2"></div>
-                </div>
-                <div class="bottomFeet">
-                    <div class="feet foot3"></div>
-                    <div class="feet foot4"></div>
+                <div class="verticalBars">
+                    <div class="verticalBar bar4"></div>
+                    <div class="verticalBar bar5"></div>
+                    <div class="verticalBar bar6"></div>
+                    <div class="verticalBar bar7"></div>
+                    <div class="verticalBar bar8"></div>
                 </div>
             </div>
+            <div class="keys"></div>
+        </div>
+        <div class="keyboardStand">
+            <div class="legs leg1"></div>
+            <div class="legs leg2"></div>
+            <div class="topFeet">
+                <div class="feet foot1"></div>
+                <div class="feet foot2"></div>
+            </div>
+            <div class="bottomFeet">
+                <div class="feet foot3"></div>
+                <div class="feet foot4"></div>
+            </div>
+        </div>
         `
     },
     acousticGuitar: {
         html: `
-            <div class="guitar">
-                <div class="top">
-                    <div class="head"></div>
-                    <div class="tuningPegs">
-                        <div class="tuningPeg peg1"></div>
-                        <div class="tuningPeg peg2"></div>
-                        <div class="tuningPeg peg3"></div>
-                        <div class="tuningPeg peg4"></div>
-                        <div class="tuningPeg peg5"></div>
-                        <div class="tuningPeg peg6"></div>
-                    </div>
-                    <div class="tuningBars">
-                        <div class="tuningBar bar1"></div>
-                        <div class="tuningBar bar2"></div>
-                        <div class="tuningBar bar3"></div>
-                    </div>
-                    <div class="neck"></div>
+        <audio 
+            id="acousticGuitarAudio"
+            src="./assets/acousticGuitar.wav"
+            type="audio/wav"
+            loop
+        ></audio>
+        <div class="guitar">
+            <div class="top">
+                <div class="head"></div>
+                <div class="tuningPegs">
+                    <div class="tuningPeg peg1"></div>
+                    <div class="tuningPeg peg2"></div>
+                    <div class="tuningPeg peg3"></div>
+                    <div class="tuningPeg peg4"></div>
+                    <div class="tuningPeg peg5"></div>
+                    <div class="tuningPeg peg6"></div>
                 </div>
-                <div class="body">
-                    <div class="topHalf"></div>
-                    <div class="bottomHalf"></div>
-                    <div class=" side rightSide"></div>
-                    <div class="side leftSide"></div>
-                    <div class="pickGuard"></div>
-                    <div class="soundHole"></div>
-                    <div class="bridge"></div>
+                <div class="tuningBars">
+                    <div class="tuningBar bar1"></div>
+                    <div class="tuningBar bar2"></div>
+                    <div class="tuningBar bar3"></div>
                 </div>
-                <div class="strings">
-                    <div class="topNodes">
-                        <div class="topNode topNode1"></div>
-                        <div class="topNode topNode2"></div>
-                        <div class="topNode topNode3"></div>
-                        <div class="topNode topNode4"></div>
-                        <div class="topNode topNode5"></div>
-                        <div class="topNode topNode6"></div>
+                <div class="neck"></div>
+            </div>
+            <div class="body">
+                <div class="topHalf"></div>
+                <div class="bottomHalf"></div>
+                <div class=" side rightSide"></div>
+                <div class="side leftSide"></div>
+                <div class="pickGuard"></div>
+                <div class="soundHole"></div>
+                <div class="bridge"></div>
+            </div>
+            <div class="strings">
+                <div class="topNodes">
+                    <div class="topNode topNode1"></div>
+                    <div class="topNode topNode2"></div>
+                    <div class="topNode topNode3"></div>
+                    <div class="topNode topNode4"></div>
+                    <div class="topNode topNode5"></div>
+                    <div class="topNode topNode6"></div>
+                </div>
+                <div class="flexString">
+                    <div class="string">
+                        <div class="angledString angledString1"></div>
+                        <div class="bottomNode"></div>
                     </div>
-                    <div class="flexString">
-                        <div class="string">
-                            <div class="angledString angledString1"></div>
-                            <div class="bottomNode"></div>
-                        </div>
-                        <div class="string">
-                            <div class="angledString angledString2"></div>
-                            <div class="bottomNode"></div>
-                        </div>
-                        <div class="string">
-                            <div class="angledString angledString3"></div>
-                            <div class="bottomNode"></div>
-                        </div>
-                        <div class="string">
-                            <div class="angledString angledString4"></div>
-                            <div class="bottomNode"></div>
-                        </div>
-                        <div class="string">
-                            <div class="angledString angledString5"></div>
-                            <div class="bottomNode"></div>
-                        </div>
-                        <div class="string">
-                            <div class="angledString angledString6"></div>
-                            <div class="bottomNode"></div>
-                        </div>
+                    <div class="string">
+                        <div class="angledString angledString2"></div>
+                        <div class="bottomNode"></div>
+                    </div>
+                    <div class="string">
+                        <div class="angledString angledString3"></div>
+                        <div class="bottomNode"></div>
+                    </div>
+                    <div class="string">
+                        <div class="angledString angledString4"></div>
+                        <div class="bottomNode"></div>
+                    </div>
+                    <div class="string">
+                        <div class="angledString angledString5"></div>
+                        <div class="bottomNode"></div>
+                    </div>
+                    <div class="string">
+                        <div class="angledString angledString6"></div>
+                        <div class="bottomNode"></div>
                     </div>
                 </div>
             </div>
-            <div class="guitarStand">
-                <div class="topBrace">
-                    <div class="circle leftCircle"></div>
-                    <div class="circle rightCircle"></div>
-                </div>
-                <div class="bottomBrace">
-                    <div class="circle leftCircle"></div>
-                    <div class="circle rightCircle"></div>
-                </div>
-                <div class="stand">
-                    <div class="legs leg1"></div>
-                    <div class="legs leg2"></div>
-                    <div class="legs leg3"></div>
-                </div>
+        </div>
+        <div class="guitarStand">
+            <div class="topBrace">
+                <div class="circle leftCircle"></div>
+                <div class="circle rightCircle"></div>
             </div>
+            <div class="bottomBrace">
+                <div class="circle leftCircle"></div>
+                <div class="circle rightCircle"></div>
+            </div>
+            <div class="stand">
+                <div class="legs leg1"></div>
+                <div class="legs leg2"></div>
+                <div class="legs leg3"></div>
+            </div>
+        </div>
         `
     }
 }
@@ -515,7 +545,7 @@ studioApp.addInstrument = function(object, instrument) {
     $instrumentContainer.toggleClass("hideInstrument");
 
     // display instrument to the page only if the instrument is not being hidden by the .hideInstrument class
-    $(instrumentName).append(revealInstrument);
+    $(instrumentName).html(revealInstrument);
 
     // add instrument audio
     $(`#${instrument}Audio`)[0].play();
