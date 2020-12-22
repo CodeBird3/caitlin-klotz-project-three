@@ -1,7 +1,6 @@
 /* STEPS FOR CREATING AN INTERACTIVE RECORDING STUDIO
 
 - stretch goals:
-    - have audio for each instrument
     - animate the instruments in some way so that they move when seen
         - or:
             - have part of the instruments move (e.g. strings)
@@ -128,8 +127,7 @@ studioApp.instruments = {
             </div>
             <div class="speaker"></div>
         </div>
-        `,
-        audio: new Audio("bassGuitar.wav")
+        `
     },
     electricGuitar: {
         html: `
@@ -274,8 +272,7 @@ studioApp.instruments = {
             </div>
             <div class="speaker"></div>
         </div>
-        `,
-        audio: new Audio("electricGuitar.wav")
+        `
     },
     drumKit: {
         html: `
@@ -383,8 +380,7 @@ studioApp.instruments = {
                 </div>
             </div>
         </div>
-        `,
-        audio: new Audio("drumKit.wav")
+        `
     },
     keyboard: {
         html: `
@@ -417,8 +413,7 @@ studioApp.instruments = {
                     <div class="feet foot4"></div>
                 </div>
             </div>
-        `,
-        audio: new Audio("keyboard.wav")
+        `
     },
     acousticGuitar: {
         html: `
@@ -501,8 +496,7 @@ studioApp.instruments = {
                     <div class="legs leg3"></div>
                 </div>
             </div>
-        `,
-        audio: new Audio("acousticGuitar.wav")
+        `
     }
 }
 
@@ -521,12 +515,14 @@ studioApp.addInstrument = function(object, instrument) {
     $instrumentContainer.toggleClass("hideInstrument");
 
     // display instrument to the page only if the instrument is not being hidden by the .hideInstrument class
-    $(instrumentName).html(revealInstrument);
+    $(instrumentName).append(revealInstrument);
 
-    // TODO figure out why there's no sound
     // add instrument audio
-    const instrumentAudio = object[instrument].audio;
-    instrumentAudio.play();
+    $(`#${instrument}Audio`)[0].play();
+    // pause audio
+    if ($instrumentContainer.hasClass("hideInstrument")) {
+        $(`#${instrument}Audio`)[0].pause();
+    }
 }
 
 
@@ -553,7 +549,6 @@ studioApp.initialInstrumentSize = function() {
     // store the default width of the instrument containers
     const $instrument = $(".instrument");
     const defaultWidth = 300;
-
 
     // the initial width of the instrument containers should be 20% of the width of the recording studio container and the height should keep the aspect ratio of 3 : 4
     const $initialWidth = $initialStudioSize / 5;
@@ -593,7 +588,7 @@ studioApp.resizeInstruments = function() {
         const scale = newWidth / currentWidth;
 
         // update the recording studio container's height to be the same as the instrument containers
-            $recordingStudio.height(newHeight);
+        $recordingStudio.height(newHeight);
 
         // scale the instruments inside the containers to fit inside of the new dimensions
         $instrument.css("transform", `scale(${scale})`);

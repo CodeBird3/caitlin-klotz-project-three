@@ -68,19 +68,3 @@
         height: 200px;
     }
 }
-
-// remove hover state
-@media (hover: none) {
-    .instrumentChoices .buttons {
-
-        button:hover {
-            background: none;
-            color: inherit;
-        }
-    }
-
-    footer a:hover {
-        color: inherit;
-        text-shadow: none;
-    }
-}
